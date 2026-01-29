@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5b094bb07209f6174d4fed371d9cbd0c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5b094bb07209f6174d4fed371d9cbd0c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5b094bb07209f6174d4fed371d9cbd0c = L.map(
+                "map_5b094bb07209f6174d4fed371d9cbd0c",
+                {
+                    center: [54.5, -3.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4f8b8e403cd15288dc3623411f74f275 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+        
+    
+            var tile_layer_95d316a4179a41004a8be0f2fbe1939d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+        
+    
+            var tile_layer_8d1327aa7e96bf57b15105fdaaa5081b = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u00a9 OpenStreetMap contributors \u00a9 CARTO", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            ).addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+        
+    
+            var tile_layer_4073c8b80a027b537650f0f37eec1baf = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}",
+                {"attribution": "Tiles \u00a9 Esri \u2014 Source: Esri, USGS, NOAA", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+        
+    
+            var feature_group_92bd0b6f25f5fbb86b8e971b29631ea5 = L.featureGroup(
+                {}
+            ).addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+        
+    
+            var circle_marker_65656ff370995cc50e4dbc2d212bbd4b = L.circleMarker(
+                [51.4386547, -2.6031568],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0b5d1eff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 20.0, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_be42c41b8e5d3b2087a6a5f760190f3e = L.popup({"maxWidth": 320});
+
+        
+            var html_7e27c97e4894fc4100673771a58f9e26 = $(`<div id="html_7e27c97e4894fc4100673771a58f9e26" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>S & B Cafe</b><br>       Postcode: <b>BS3 4AG</b><br>       Value: 4,851     </div>     </div>`)[0];
+            popup_be42c41b8e5d3b2087a6a5f760190f3e.setContent(html_7e27c97e4894fc4100673771a58f9e26);
+        
+
+        circle_marker_65656ff370995cc50e4dbc2d212bbd4b.bindPopup(popup_be42c41b8e5d3b2087a6a5f760190f3e)
+        ;
+
+        
+    
+    
+            circle_marker_65656ff370995cc50e4dbc2d212bbd4b.bindTooltip(
+                `<div>
+                     S & B Cafe (BS3 4AG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2c7832065b9c1812391da5bb8e1cc0d1 = L.circleMarker(
+                [51.438559, -0.0166543],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#92d575ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 14.988346744271206, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_36a8825dae9dab19219bf0408632947a = L.popup({"maxWidth": 320});
+
+        
+            var html_08b29d2d3ba9162d08b40b690c70db4a = $(`<div id="html_08b29d2d3ba9162d08b40b690c70db4a" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Pizza Roma - Catford</b><br>       Postcode: <b>SE6 1AE</b><br>       Value: 2,288     </div>     </div>`)[0];
+            popup_36a8825dae9dab19219bf0408632947a.setContent(html_08b29d2d3ba9162d08b40b690c70db4a);
+        
+
+        circle_marker_2c7832065b9c1812391da5bb8e1cc0d1.bindPopup(popup_36a8825dae9dab19219bf0408632947a)
+        ;
+
+        
+    
+    
+            circle_marker_2c7832065b9c1812391da5bb8e1cc0d1.bindTooltip(
+                `<div>
+                     Pizza Roma - Catford (SE6 1AE)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4d21ab6a1821a75a1bab153c2bd0510c = L.circleMarker(
+                [51.5352408, -0.4738505],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#94d675ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 14.911234586328778, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_ab6328dbcedec7f18e69a378c20b2d51 = L.popup({"maxWidth": 320});
+
+        
+            var html_0921206b11c5a71cc878ec87021629f8 = $(`<div id="html_0921206b11c5a71cc878ec87021629f8" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Tikka Nation - Eskdale Road</b><br>       Postcode: <b>UB8 2RT</b><br>       Value: 2,256     </div>     </div>`)[0];
+            popup_ab6328dbcedec7f18e69a378c20b2d51.setContent(html_0921206b11c5a71cc878ec87021629f8);
+        
+
+        circle_marker_4d21ab6a1821a75a1bab153c2bd0510c.bindPopup(popup_ab6328dbcedec7f18e69a378c20b2d51)
+        ;
+
+        
+    
+    
+            circle_marker_4d21ab6a1821a75a1bab153c2bd0510c.bindTooltip(
+                `<div>
+                     Tikka Nation - Eskdale Road (UB8 2RT)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_01a20b01b0c0de23a7614e15229e643e = L.circleMarker(
+                [51.219137, -0.7942479],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#9bda79ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 14.607131317983628, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_ead735acbf5adfaf450b17f44e485382 = L.popup({"maxWidth": 320});
+
+        
+            var html_e2fae702ca885a3c9777abfc91a0c33c = $(`<div id="html_e2fae702ca885a3c9777abfc91a0c33c" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Farnham</b><br>       Postcode: <b>GU9 7RX</b><br>       Value: 2,132     </div>     </div>`)[0];
+            popup_ead735acbf5adfaf450b17f44e485382.setContent(html_e2fae702ca885a3c9777abfc91a0c33c);
+        
+
+        circle_marker_01a20b01b0c0de23a7614e15229e643e.bindPopup(popup_ead735acbf5adfaf450b17f44e485382)
+        ;
+
+        
+    
+    
+            circle_marker_01a20b01b0c0de23a7614e15229e643e.bindTooltip(
+                `<div>
+                     Slug And Lettuce Farnham (GU9 7RX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ec5423eb01927685d008c31efecc2bc7 = L.circleMarker(
+                [50.8508807, -1.1591621],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ace380ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 13.864720930011389, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_af58d810f49a16eee3f381ed4ac75c17 = L.popup({"maxWidth": 320});
+
+        
+            var html_2329322ba74c9f08fed241b5d461f64f = $(`<div id="html_2329322ba74c9f08fed241b5d461f64f" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Fareham</b><br>       Postcode: <b>PO16 0JN</b><br>       Value: 1,844     </div>     </div>`)[0];
+            popup_af58d810f49a16eee3f381ed4ac75c17.setContent(html_2329322ba74c9f08fed241b5d461f64f);
+        
+
+        circle_marker_ec5423eb01927685d008c31efecc2bc7.bindPopup(popup_af58d810f49a16eee3f381ed4ac75c17)
+        ;
+
+        
+    
+    
+            circle_marker_ec5423eb01927685d008c31efecc2bc7.bindTooltip(
+                `<div>
+                     Slug And Lettuce Fareham (PO16 0JN)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d05e9e316beb3dd1c89411e4e34666a1 = L.circleMarker(
+                [51.1730206, -0.1641717],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ace380ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 13.85669321600308, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_effe25ef3778c661c16e83cf0b8bcad7 = L.popup({"maxWidth": 320});
+
+        
+            var html_c6f854a8fceae0053f60c731139a0988 = $(`<div id="html_c6f854a8fceae0053f60c731139a0988" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Foresters Horley</b><br>       Postcode: <b>RH6 7AB</b><br>       Value: 1,841     </div>     </div>`)[0];
+            popup_effe25ef3778c661c16e83cf0b8bcad7.setContent(html_c6f854a8fceae0053f60c731139a0988);
+        
+
+        circle_marker_d05e9e316beb3dd1c89411e4e34666a1.bindPopup(popup_effe25ef3778c661c16e83cf0b8bcad7)
+        ;
+
+        
+    
+    
+            circle_marker_d05e9e316beb3dd1c89411e4e34666a1.bindTooltip(
+                `<div>
+                     Foresters Horley (RH6 7AB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0683eae0399d30da33904cc136d7db3d = L.circleMarker(
+                [51.900632, -2.0818521],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#aee481ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 13.751731580112043, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_737e18972acfaa4e743a79c2a61e7ace = L.popup({"maxWidth": 320});
+
+        
+            var html_6eb59a0658e9e03780e387181c671842 = $(`<div id="html_6eb59a0658e9e03780e387181c671842" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Yates Cheltenham</b><br>       Postcode: <b>GL50 3PE</b><br>       Value: 1,802     </div>     </div>`)[0];
+            popup_737e18972acfaa4e743a79c2a61e7ace.setContent(html_6eb59a0658e9e03780e387181c671842);
+        
+
+        circle_marker_0683eae0399d30da33904cc136d7db3d.bindPopup(popup_737e18972acfaa4e743a79c2a61e7ace)
+        ;
+
+        
+    
+    
+            circle_marker_0683eae0399d30da33904cc136d7db3d.bindTooltip(
+                `<div>
+                     Yates Cheltenham (GL50 3PE)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b06cfceb60e388442957e99e7f6a6cbe = L.circleMarker(
+                [52.6619269, 1.2803571],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b6e885ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 13.384961896129122, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_9b73efacb4e674fc1097d0ba14c32c0c = L.popup({"maxWidth": 320});
+
+        
+            var html_0553060592b204ee035ae055e4914f59 = $(`<div id="html_0553060592b204ee035ae055e4914f59" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Bull Hellesdon</b><br>       Postcode: <b>NR6 5QA</b><br>       Value: 1,669     </div>     </div>`)[0];
+            popup_9b73efacb4e674fc1097d0ba14c32c0c.setContent(html_0553060592b204ee035ae055e4914f59);
+        
+
+        circle_marker_b06cfceb60e388442957e99e7f6a6cbe.bindPopup(popup_9b73efacb4e674fc1097d0ba14c32c0c)
+        ;
+
+        
+    
+    
+            circle_marker_b06cfceb60e388442957e99e7f6a6cbe.bindTooltip(
+                `<div>
+                     The Bull Hellesdon (NR6 5QA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9a3d246fec240bb528fd44f3cea273cc = L.circleMarker(
+                [53.4241784, -2.232693],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b6e885ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 13.356804131207596, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_301d8b8c82c81cf24b8475da004c4877 = L.popup({"maxWidth": 320});
+
+        
+            var html_2bc79a4f4bc634a82e4d522c83cd640d = $(`<div id="html_2bc79a4f4bc634a82e4d522c83cd640d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Sultan</b><br>       Postcode: <b>M20 4BA</b><br>       Value: 1,659     </div>     </div>`)[0];
+            popup_301d8b8c82c81cf24b8475da004c4877.setContent(html_2bc79a4f4bc634a82e4d522c83cd640d);
+        
+
+        circle_marker_9a3d246fec240bb528fd44f3cea273cc.bindPopup(popup_301d8b8c82c81cf24b8475da004c4877)
+        ;
+
+        
+    
+    
+            circle_marker_9a3d246fec240bb528fd44f3cea273cc.bindTooltip(
+                `<div>
+                     Sultan (M20 4BA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ba3ddde26b7b5d7a45720edfeb80f12b = L.circleMarker(
+                [53.4926929, -2.2990621],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#baea85ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 13.125524696667403, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_8c561b426ca534f75f58a5d5f36a11e5 = L.popup({"maxWidth": 320});
+
+        
+            var html_4c623ba64c79d420426ede527718be47 = $(`<div id="html_4c623ba64c79d420426ede527718be47" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Tacorrito - Langworthy Road</b><br>       Postcode: <b>M6 5PP</b><br>       Value: 1,578     </div>     </div>`)[0];
+            popup_8c561b426ca534f75f58a5d5f36a11e5.setContent(html_4c623ba64c79d420426ede527718be47);
+        
+
+        circle_marker_ba3ddde26b7b5d7a45720edfeb80f12b.bindPopup(popup_8c561b426ca534f75f58a5d5f36a11e5)
+        ;
+
+        
+    
+    
+            circle_marker_ba3ddde26b7b5d7a45720edfeb80f12b.bindTooltip(
+                `<div>
+                     Tacorrito - Langworthy Road (M6 5PP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ce94bd1c99e53793234615f8501096f8 = L.circleMarker(
+                [52.7031424, -2.5029461],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#beeb83ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 12.843586889162786, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_652c80d048349ce791dc28acca67526e = L.popup({"maxWidth": 320});
+
+        
+            var html_9ccf0da12f974d3e7bb6e9dd35895fba = $(`<div id="html_9ccf0da12f974d3e7bb6e9dd35895fba" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Bridge Builder Telford - Wrekin</b><br>       Postcode: <b>TF1 2DE</b><br>       Value: 1,482     </div>     </div>`)[0];
+            popup_652c80d048349ce791dc28acca67526e.setContent(html_9ccf0da12f974d3e7bb6e9dd35895fba);
+        
+
+        circle_marker_ce94bd1c99e53793234615f8501096f8.bindPopup(popup_652c80d048349ce791dc28acca67526e)
+        ;
+
+        
+    
+    
+            circle_marker_ce94bd1c99e53793234615f8501096f8.bindTooltip(
+                `<div>
+                     Bridge Builder Telford - Wrekin (TF1 2DE)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2782446007c8d1824d82ddfe2f6b7c94 = L.circleMarker(
+                [53.2022603, -2.9089758],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6ee80ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 12.339923182930155, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_6a5b75a75e98de2dfe4c8ab842c912a4 = L.popup({"maxWidth": 320});
+
+        
+            var html_0e93cdc0e60cb4d000e039544274c926 = $(`<div id="html_0e93cdc0e60cb4d000e039544274c926" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>City Tavern Chester</b><br>       Postcode: <b>CH1 3JL</b><br>       Value: 1,318     </div>     </div>`)[0];
+            popup_6a5b75a75e98de2dfe4c8ab842c912a4.setContent(html_0e93cdc0e60cb4d000e039544274c926);
+        
+
+        circle_marker_2782446007c8d1824d82ddfe2f6b7c94.bindPopup(popup_6a5b75a75e98de2dfe4c8ab842c912a4)
+        ;
+
+        
+    
+    
+            circle_marker_2782446007c8d1824d82ddfe2f6b7c94.bindTooltip(
+                `<div>
+                     City Tavern Chester (CH1 3JL)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d2b8222be778876e0e916902e7a261be = L.circleMarker(
+                [53.6256253, -1.797853],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c8ee7fff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 12.151118565528618, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_a972236a9d315e6f94c02634bc8f9954 = L.popup({"maxWidth": 320});
+
+        
+            var html_d261ae9d394226f129b98a7da515044e = $(`<div id="html_d261ae9d394226f129b98a7da515044e" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Indie Eats - Newsome Road</b><br>       Postcode: <b>HD4 6BY</b><br>       Value: 1,259     </div>     </div>`)[0];
+            popup_a972236a9d315e6f94c02634bc8f9954.setContent(html_d261ae9d394226f129b98a7da515044e);
+        
+
+        circle_marker_d2b8222be778876e0e916902e7a261be.bindPopup(popup_a972236a9d315e6f94c02634bc8f9954)
+        ;
+
+        
+    
+    
+            circle_marker_d2b8222be778876e0e916902e7a261be.bindTooltip(
+                `<div>
+                     Indie Eats - Newsome Road (HD4 6BY)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_16c0d1b6f4aad1f6933ad3ba4509ab79 = L.circleMarker(
+                [51.5131903, -0.3024217],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cbef7dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.907942822151462, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_5a549621daa2509f76189c7b875aeb09 = L.popup({"maxWidth": 320});
+
+        
+            var html_2fa9b6c9e07fde41914a77ba97d6359c = $(`<div id="html_2fa9b6c9e07fde41914a77ba97d6359c" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Crypto Burger</b><br>       Postcode: <b>W5 5EU</b><br>       Value: 1,185     </div>     </div>`)[0];
+            popup_5a549621daa2509f76189c7b875aeb09.setContent(html_2fa9b6c9e07fde41914a77ba97d6359c);
+        
+
+        circle_marker_16c0d1b6f4aad1f6933ad3ba4509ab79.bindPopup(popup_5a549621daa2509f76189c7b875aeb09)
+        ;
+
+        
+    
+    
+            circle_marker_16c0d1b6f4aad1f6933ad3ba4509ab79.bindTooltip(
+                `<div>
+                     Crypto Burger (W5 5EU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_52480281880bb810aa93e2f633ad0429 = L.circleMarker(
+                [50.8135706, -0.3771568],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ccef7dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.894584801090684, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_d42206cb45f5a6f020ee054968c6dd5f = L.popup({"maxWidth": 320});
+
+        
+            var html_130166ee705810214cd8858ba960d582 = $(`<div id="html_130166ee705810214cd8858ba960d582" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Worthing</b><br>       Postcode: <b>BN11 1BJ</b><br>       Value: 1,181     </div>     </div>`)[0];
+            popup_d42206cb45f5a6f020ee054968c6dd5f.setContent(html_130166ee705810214cd8858ba960d582);
+        
+
+        circle_marker_52480281880bb810aa93e2f633ad0429.bindPopup(popup_d42206cb45f5a6f020ee054968c6dd5f)
+        ;
+
+        
+    
+    
+            circle_marker_52480281880bb810aa93e2f633ad0429.bindTooltip(
+                `<div>
+                     Slug And Lettuce Worthing (BN11 1BJ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cee6fcbb3bdc171b67b7dd4c921947e5 = L.circleMarker(
+                [53.0153757, -2.2395729],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cdf07dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.813957140961508, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_fcf93c48841448a791297e89dc70a50e = L.popup({"maxWidth": 320});
+
+        
+            var html_cdafedd93017c974e494f1d8928b9404 = $(`<div id="html_cdafedd93017c974e494f1d8928b9404" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Newcastle-Under-Lyme</b><br>       Postcode: <b>ST5 1PS</b><br>       Value: 1,157     </div>     </div>`)[0];
+            popup_fcf93c48841448a791297e89dc70a50e.setContent(html_cdafedd93017c974e494f1d8928b9404);
+        
+
+        circle_marker_cee6fcbb3bdc171b67b7dd4c921947e5.bindPopup(popup_fcf93c48841448a791297e89dc70a50e)
+        ;
+
+        
+    
+    
+            circle_marker_cee6fcbb3bdc171b67b7dd4c921947e5.bindTooltip(
+                `<div>
+                     Slug And Lettuce Newcastle-Under-Lyme (ST5 1PS)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_55350aa3150e6cf57e832a96c55bd8f9 = L.circleMarker(
+                [52.3464135, -2.068307],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cef07cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.739310593867973, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_4ccfe49e279005382121e80a6658fa91 = L.popup({"maxWidth": 320});
+
+        
+            var html_7c309132ddb218de5bee31016289ab0c = $(`<div id="html_7c309132ddb218de5bee31016289ab0c" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Bromsgrove</b><br>       Postcode: <b>B61 8ES</b><br>       Value: 1,135     </div>     </div>`)[0];
+            popup_4ccfe49e279005382121e80a6658fa91.setContent(html_7c309132ddb218de5bee31016289ab0c);
+        
+
+        circle_marker_55350aa3150e6cf57e832a96c55bd8f9.bindPopup(popup_4ccfe49e279005382121e80a6658fa91)
+        ;
+
+        
+    
+    
+            circle_marker_55350aa3150e6cf57e832a96c55bd8f9.bindTooltip(
+                `<div>
+                     Slug And Lettuce Bromsgrove (B61 8ES)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0166b74aea491bc766c0583403378b9c = L.circleMarker(
+                [52.1956174, -2.2220478],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cef07cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.715407967110274, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_bebf458dfd751357f0939ef839324cb3 = L.popup({"maxWidth": 320});
+
+        
+            var html_b3e2e1029fea696b2c627f7e5601f4e0 = $(`<div id="html_b3e2e1029fea696b2c627f7e5601f4e0" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Worcester</b><br>       Postcode: <b>WR1 3PY</b><br>       Value: 1,128     </div>     </div>`)[0];
+            popup_bebf458dfd751357f0939ef839324cb3.setContent(html_b3e2e1029fea696b2c627f7e5601f4e0);
+        
+
+        circle_marker_0166b74aea491bc766c0583403378b9c.bindPopup(popup_bebf458dfd751357f0939ef839324cb3)
+        ;
+
+        
+    
+    
+            circle_marker_0166b74aea491bc766c0583403378b9c.bindTooltip(
+                `<div>
+                     Slug And Lettuce Worcester (WR1 3PY)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_70988bc090fb21186de0ad7d11a0cb27 = L.circleMarker(
+                [51.8200483, -0.8054056],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cef07cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.681132329086429, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_949c5304de6b8f7a465ec0b8b0165130 = L.popup({"maxWidth": 320});
+
+        
+            var html_28ea0a06f068cd7c0b01a436539d4924 = $(`<div id="html_28ea0a06f068cd7c0b01a436539d4924" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Krave Kebab & Curry - Aylesbury</b><br>       Postcode: <b>HP20 2LA</b><br>       Value: 1,118     </div>     </div>`)[0];
+            popup_949c5304de6b8f7a465ec0b8b0165130.setContent(html_28ea0a06f068cd7c0b01a436539d4924);
+        
+
+        circle_marker_70988bc090fb21186de0ad7d11a0cb27.bindPopup(popup_949c5304de6b8f7a465ec0b8b0165130)
+        ;
+
+        
+    
+    
+            circle_marker_70988bc090fb21186de0ad7d11a0cb27.bindTooltip(
+                `<div>
+                     Krave Kebab & Curry - Aylesbury (HP20 2LA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_243555e921b27a3bdf8239cabdcbad7f = L.circleMarker(
+                [52.5864721, -2.1158825],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cef07cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.677696349344348, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_7a98acaf05450848054b0d9dd66e8eaa = L.popup({"maxWidth": 320});
+
+        
+            var html_f50bbc6c2852e3b11741e06701b5e69a = $(`<div id="html_f50bbc6c2852e3b11741e06701b5e69a" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Royal London Wolverhampton</b><br>       Postcode: <b>WV1 1LX</b><br>       Value: 1,117     </div>     </div>`)[0];
+            popup_7a98acaf05450848054b0d9dd66e8eaa.setContent(html_f50bbc6c2852e3b11741e06701b5e69a);
+        
+
+        circle_marker_243555e921b27a3bdf8239cabdcbad7f.bindPopup(popup_7a98acaf05450848054b0d9dd66e8eaa)
+        ;
+
+        
+    
+    
+            circle_marker_243555e921b27a3bdf8239cabdcbad7f.bindTooltip(
+                `<div>
+                     Royal London Wolverhampton (WV1 1LX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_23def7c250485df64189cd72ff37ef84 = L.circleMarker(
+                [51.3917166, 0.1033934],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d1f17bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.461576142629745, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_5f1faeb43bda7cd9f6fcbda826cde86c = L.popup({"maxWidth": 320});
+
+        
+            var html_00b577eca8eee524b5d9518298e5e2a0 = $(`<div id="html_00b577eca8eee524b5d9518298e5e2a0" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Desperados Grill + Cantina</b><br>       Postcode: <b>BR5 1NA</b><br>       Value: 1,055     </div>     </div>`)[0];
+            popup_5f1faeb43bda7cd9f6fcbda826cde86c.setContent(html_00b577eca8eee524b5d9518298e5e2a0);
+        
+
+        circle_marker_23def7c250485df64189cd72ff37ef84.bindPopup(popup_5f1faeb43bda7cd9f6fcbda826cde86c)
+        ;
+
+        
+    
+    
+            circle_marker_23def7c250485df64189cd72ff37ef84.bindTooltip(
+                `<div>
+                     Desperados Grill + Cantina (BR5 1NA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c0aa411ae629df202e4118f9fd6a3b85 = L.circleMarker(
+                [54.9677908, -1.4844933],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d5f279ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 11.128817370767145, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_baa1580824a6edacc005f9fa43844321 = L.popup({"maxWidth": 320});
+
+        
+            var html_ee0712d0cc252b47dc7c05f943aae5e5 = $(`<div id="html_ee0712d0cc252b47dc7c05f943aae5e5" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Lord Nelson Jarrow</b><br>       Postcode: <b>NE32 5NN</b><br>       Value: 963     </div>     </div>`)[0];
+            popup_baa1580824a6edacc005f9fa43844321.setContent(html_ee0712d0cc252b47dc7c05f943aae5e5);
+        
+
+        circle_marker_c0aa411ae629df202e4118f9fd6a3b85.bindPopup(popup_baa1580824a6edacc005f9fa43844321)
+        ;
+
+        
+    
+    
+            circle_marker_c0aa411ae629df202e4118f9fd6a3b85.bindTooltip(
+                `<div>
+                     Lord Nelson Jarrow (NE32 5NN)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_59dc4118a940217ce3c4cbebfca22802 = L.circleMarker(
+                [51.8840222, 0.8963748],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d8f378ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.941282726967085, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_59bb3fb0bf4669f05d257ff50a8c1329 = L.popup({"maxWidth": 320});
+
+        
+            var html_e40a39ff6c88d597e2674678145f3ef7 = $(`<div id="html_e40a39ff6c88d597e2674678145f3ef7" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Centurion Colchester</b><br>       Postcode: <b>CO1 1PX</b><br>       Value: 913     </div>     </div>`)[0];
+            popup_59bb3fb0bf4669f05d257ff50a8c1329.setContent(html_e40a39ff6c88d597e2674678145f3ef7);
+        
+
+        circle_marker_59dc4118a940217ce3c4cbebfca22802.bindPopup(popup_59bb3fb0bf4669f05d257ff50a8c1329)
+        ;
+
+        
+    
+    
+            circle_marker_59dc4118a940217ce3c4cbebfca22802.bindTooltip(
+                `<div>
+                     The Centurion Colchester (CO1 1PX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5c0ced5e26719f2cb9976089c4677786 = L.circleMarker(
+                [52.058478, 0.7211086],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d9f377ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.845589112024014, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_87b2bfc6bddc3b58c8806d2eec418aa0 = L.popup({"maxWidth": 320});
+
+        
+            var html_8bfde15d8964a01514ae39d42a748884 = $(`<div id="html_8bfde15d8964a01514ae39d42a748884" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Weavers Tap Sudbury</b><br>       Postcode: <b>CO10 2HX</b><br>       Value: 888     </div>     </div>`)[0];
+            popup_87b2bfc6bddc3b58c8806d2eec418aa0.setContent(html_8bfde15d8964a01514ae39d42a748884);
+        
+
+        circle_marker_5c0ced5e26719f2cb9976089c4677786.bindPopup(popup_87b2bfc6bddc3b58c8806d2eec418aa0)
+        ;
+
+        
+    
+    
+            circle_marker_5c0ced5e26719f2cb9976089c4677786.bindTooltip(
+                `<div>
+                     Weavers Tap Sudbury (CO10 2HX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c23283433ccb28e0a466025d3ccb5ebc = L.circleMarker(
+                [53.6468691, -1.788934],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#daf477ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.752447505151967, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_f1fe62dc4b4e05e552fbcffd926efd64 = L.popup({"maxWidth": 320});
+
+        
+            var html_34f647b1aa4d6fbaab104cd8e3a53dc9 = $(`<div id="html_34f647b1aa4d6fbaab104cd8e3a53dc9" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Crown Huddersfield</b><br>       Postcode: <b>HD1 1PB</b><br>       Value: 864     </div>     </div>`)[0];
+            popup_f1fe62dc4b4e05e552fbcffd926efd64.setContent(html_34f647b1aa4d6fbaab104cd8e3a53dc9);
+        
+
+        circle_marker_c23283433ccb28e0a466025d3ccb5ebc.bindPopup(popup_f1fe62dc4b4e05e552fbcffd926efd64)
+        ;
+
+        
+    
+    
+            circle_marker_c23283433ccb28e0a466025d3ccb5ebc.bindTooltip(
+                `<div>
+                     Crown Huddersfield (HD1 1PB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3d8c66d4ae5fa90a427517e6d76ce3cc = L.circleMarker(
+                [53.7210243, -1.8716182],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#daf477ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.728960660059311, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_37fa5c588e3a18a4a7ea9b230df00554 = L.popup({"maxWidth": 320});
+
+        
+            var html_914768e399fea624b5077d4031ccdb69 = $(`<div id="html_914768e399fea624b5077d4031ccdb69" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Yates Halifax</b><br>       Postcode: <b>HX1 1JN</b><br>       Value: 858     </div>     </div>`)[0];
+            popup_37fa5c588e3a18a4a7ea9b230df00554.setContent(html_914768e399fea624b5077d4031ccdb69);
+        
+
+        circle_marker_3d8c66d4ae5fa90a427517e6d76ce3cc.bindPopup(popup_37fa5c588e3a18a4a7ea9b230df00554)
+        ;
+
+        
+    
+    
+            circle_marker_3d8c66d4ae5fa90a427517e6d76ce3cc.bindTooltip(
+                `<div>
+                     Yates Halifax (HX1 1JN)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9eb429188aec46826bb11edb64ce35b0 = L.circleMarker(
+                [51.913148, -0.1949772],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#daf477ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.725038211075432, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_d853278a5a1977f0524c152bf1df1643 = L.popup({"maxWidth": 320});
+
+        
+            var html_c149e06ef407ed42c35163bf953cd222 = $(`<div id="html_c149e06ef407ed42c35163bf953cd222" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Draper Arms Stevenage</b><br>       Postcode: <b>SG1 3DW</b><br>       Value: 857     </div>     </div>`)[0];
+            popup_d853278a5a1977f0524c152bf1df1643.setContent(html_c149e06ef407ed42c35163bf953cd222);
+        
+
+        circle_marker_9eb429188aec46826bb11edb64ce35b0.bindPopup(popup_d853278a5a1977f0524c152bf1df1643)
+        ;
+
+        
+    
+    
+            circle_marker_9eb429188aec46826bb11edb64ce35b0.bindTooltip(
+                `<div>
+                     Draper Arms Stevenage (SG1 3DW)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c7d94cd594e85a5bc4391f2420b22cdf = L.circleMarker(
+                [50.3705757, -4.154261],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ddf575ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.45680827645862, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_4ef28ae57768cbb542ad4f89a2cc7146 = L.popup({"maxWidth": 320});
+
+        
+            var html_c5c38246485bbb7dc47023028d29d597 = $(`<div id="html_c5c38246485bbb7dc47023028d29d597" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Noahs Ark Plymouth</b><br>       Postcode: <b>PL1 2TR</b><br>       Value: 790     </div>     </div>`)[0];
+            popup_4ef28ae57768cbb542ad4f89a2cc7146.setContent(html_c5c38246485bbb7dc47023028d29d597);
+        
+
+        circle_marker_c7d94cd594e85a5bc4391f2420b22cdf.bindPopup(popup_4ef28ae57768cbb542ad4f89a2cc7146)
+        ;
+
+        
+    
+    
+            circle_marker_c7d94cd594e85a5bc4391f2420b22cdf.bindTooltip(
+                `<div>
+                     Noahs Ark Plymouth (PL1 2TR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_89221a686c448993dbb75f4e420c2922 = L.circleMarker(
+                [51.4869402, -2.5814899],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dff575ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.299604225608075, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_da24c1ac31720e08a08bcb43e675461d = L.popup({"maxWidth": 320});
+
+        
+            var html_799a63144dd1932604d06cfa2c074e48 = $(`<div id="html_799a63144dd1932604d06cfa2c074e48" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Cider Press Bristol</b><br>       Postcode: <b>BS7 8BN</b><br>       Value: 752     </div>     </div>`)[0];
+            popup_da24c1ac31720e08a08bcb43e675461d.setContent(html_799a63144dd1932604d06cfa2c074e48);
+        
+
+        circle_marker_89221a686c448993dbb75f4e420c2922.bindPopup(popup_da24c1ac31720e08a08bcb43e675461d)
+        ;
+
+        
+    
+    
+            circle_marker_89221a686c448993dbb75f4e420c2922.bindTooltip(
+                `<div>
+                     The Cider Press Bristol (BS7 8BN)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ab9c5db7da87aab91a8b820e241cf5b1 = L.circleMarker(
+                [52.6266317, 1.3068176],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dff575ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.299604225608075, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_0399059f7c983b0b93ba4f20f45bf6a8 = L.popup({"maxWidth": 320});
+
+        
+            var html_3b4e1db6da3f13c76960d39bf5ba2b07 = $(`<div id="html_3b4e1db6da3f13c76960d39bf5ba2b07" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Lamb Inn Norwich</b><br>       Postcode: <b>NR1 3RU</b><br>       Value: 752     </div>     </div>`)[0];
+            popup_0399059f7c983b0b93ba4f20f45bf6a8.setContent(html_3b4e1db6da3f13c76960d39bf5ba2b07);
+        
+
+        circle_marker_ab9c5db7da87aab91a8b820e241cf5b1.bindPopup(popup_0399059f7c983b0b93ba4f20f45bf6a8)
+        ;
+
+        
+    
+    
+            circle_marker_ab9c5db7da87aab91a8b820e241cf5b1.bindTooltip(
+                `<div>
+                     Lamb Inn Norwich (NR1 3RU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c4650017f772ed2b61082cfa4c16f8f6 = L.circleMarker(
+                [53.4643203, -2.202117],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dff575ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.287025968349067, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_0900515dd4cf420f009f327209a6e3a3 = L.popup({"maxWidth": 320});
+
+        
+            var html_cd609192b510b5bc2c69aab784d01e8f = $(`<div id="html_cd609192b510b5bc2c69aab784d01e8f" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Chester's Chicken</b><br>       Postcode: <b>M12 4AH</b><br>       Value: 749     </div>     </div>`)[0];
+            popup_0900515dd4cf420f009f327209a6e3a3.setContent(html_cd609192b510b5bc2c69aab784d01e8f);
+        
+
+        circle_marker_c4650017f772ed2b61082cfa4c16f8f6.bindPopup(popup_0900515dd4cf420f009f327209a6e3a3)
+        ;
+
+        
+    
+    
+            circle_marker_c4650017f772ed2b61082cfa4c16f8f6.bindTooltip(
+                `<div>
+                     Chester's Chicken (M12 4AH)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8647a5b13472da391942ed647a6867e7 = L.circleMarker(
+                [51.211413, -1.4845424],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dff575ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.2744224956638, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_801cf7d3dbd4a905388d0448efc3ed41 = L.popup({"maxWidth": 320});
+
+        
+            var html_4d60565ad57a8599db2569dd67b416d9 = $(`<div id="html_4d60565ad57a8599db2569dd67b416d9" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Andover Tandoori</b><br>       Postcode: <b>SP10 4BB</b><br>       Value: 746     </div>     </div>`)[0];
+            popup_801cf7d3dbd4a905388d0448efc3ed41.setContent(html_4d60565ad57a8599db2569dd67b416d9);
+        
+
+        circle_marker_8647a5b13472da391942ed647a6867e7.bindPopup(popup_801cf7d3dbd4a905388d0448efc3ed41)
+        ;
+
+        
+    
+    
+            circle_marker_8647a5b13472da391942ed647a6867e7.bindTooltip(
+                `<div>
+                     Andover Tandoori (SP10 4BB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cc6afe94d7d2e2a12a39418f9a8535f2 = L.circleMarker(
+                [50.8423629, -0.1395112],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e0f674ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.185479168655153, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_22f8dd98742789c4c496624bd6a8abc4 = L.popup({"maxWidth": 320});
+
+        
+            var html_e0947bc5cc1bc6ffa416007e272cafcb = $(`<div id="html_e0947bc5cc1bc6ffa416007e272cafcb" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Brighton Pizza and Chicken - Brighton</b><br>       Postcode: <b>BN1 4JD</b><br>       Value: 725     </div>     </div>`)[0];
+            popup_22f8dd98742789c4c496624bd6a8abc4.setContent(html_e0947bc5cc1bc6ffa416007e272cafcb);
+        
+
+        circle_marker_cc6afe94d7d2e2a12a39418f9a8535f2.bindPopup(popup_22f8dd98742789c4c496624bd6a8abc4)
+        ;
+
+        
+    
+    
+            circle_marker_cc6afe94d7d2e2a12a39418f9a8535f2.bindTooltip(
+                `<div>
+                     Brighton Pizza and Chicken - Brighton (BN1 4JD)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ff6cd8270b89cbd4b71cc327f91cb162 = L.circleMarker(
+                [52.4173564, -1.8898132],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e1f674ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 10.056151733554152, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_23a4978fad93c2549e73f9338728651e = L.popup({"maxWidth": 320});
+
+        
+            var html_30e22fb311edb9d22fdea7b9e1fd3ec4 = $(`<div id="html_30e22fb311edb9d22fdea7b9e1fd3ec4" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Old Court Kings Heath</b><br>       Postcode: <b>B14 7JZ</b><br>       Value: 695     </div>     </div>`)[0];
+            popup_23a4978fad93c2549e73f9338728651e.setContent(html_30e22fb311edb9d22fdea7b9e1fd3ec4);
+        
+
+        circle_marker_ff6cd8270b89cbd4b71cc327f91cb162.bindPopup(popup_23a4978fad93c2549e73f9338728651e)
+        ;
+
+        
+    
+    
+            circle_marker_ff6cd8270b89cbd4b71cc327f91cb162.bindTooltip(
+                `<div>
+                     The Old Court Kings Heath (B14 7JZ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6976369df6b835522c0e63e9f68bb499 = L.circleMarker(
+                [51.5760335, 0.4746395],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e3f773ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.892740171124697, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_70b6b196b1d7305e3e8ba162d142d13f = L.popup({"maxWidth": 320});
+
+        
+            var html_e618421bfe23337c27659fb3975c8def = $(`<div id="html_e618421bfe23337c27659fb3975c8def" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Beehive & The Loft Basildon</b><br>       Postcode: <b>SS14 1DQ</b><br>       Value: 658     </div>     </div>`)[0];
+            popup_70b6b196b1d7305e3e8ba162d142d13f.setContent(html_e618421bfe23337c27659fb3975c8def);
+        
+
+        circle_marker_6976369df6b835522c0e63e9f68bb499.bindPopup(popup_70b6b196b1d7305e3e8ba162d142d13f)
+        ;
+
+        
+    
+    
+            circle_marker_6976369df6b835522c0e63e9f68bb499.bindTooltip(
+                `<div>
+                     Beehive & The Loft Basildon (SS14 1DQ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_82a66b5fc8ee56027a29f309983e9a07 = L.circleMarker(
+                [51.1183435, -0.1547527],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6f872ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.584677332031513, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_50fd92cd4f9db6713e77af98b317180c = L.popup({"maxWidth": 320});
+
+        
+            var html_5586f886e9928a3861f0cd2540700562 = $(`<div id="html_5586f886e9928a3861f0cd2540700562" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Gusturi Romanesti - The Boulevard</b><br>       Postcode: <b>RH10 1XP</b><br>       Value: 591     </div>     </div>`)[0];
+            popup_50fd92cd4f9db6713e77af98b317180c.setContent(html_5586f886e9928a3861f0cd2540700562);
+        
+
+        circle_marker_82a66b5fc8ee56027a29f309983e9a07.bindPopup(popup_50fd92cd4f9db6713e77af98b317180c)
+        ;
+
+        
+    
+    
+            circle_marker_82a66b5fc8ee56027a29f309983e9a07.bindTooltip(
+                `<div>
+                     Gusturi Romanesti - The Boulevard (RH10 1XP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1ad25908e1ac2aba13272ab47513aa46 = L.circleMarker(
+                [51.4386547, -2.6031568],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.546750391832775, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_abfa4adaa419e6754597396608bf59c5 = L.popup({"maxWidth": 320});
+
+        
+            var html_165d8cc4cb315eb25fd151ccc7244568 = $(`<div id="html_165d8cc4cb315eb25fd151ccc7244568" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Anchor - East Street Bristol</b><br>       Postcode: <b>BS3 4HB</b><br>       Value: 583     </div>     </div>`)[0];
+            popup_abfa4adaa419e6754597396608bf59c5.setContent(html_165d8cc4cb315eb25fd151ccc7244568);
+        
+
+        circle_marker_1ad25908e1ac2aba13272ab47513aa46.bindPopup(popup_abfa4adaa419e6754597396608bf59c5)
+        ;
+
+        
+    
+    
+            circle_marker_1ad25908e1ac2aba13272ab47513aa46.bindTooltip(
+                `<div>
+                     Anchor - East Street Bristol (BS3 4HB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_772883445210640ad9bacef67c23a251 = L.circleMarker(
+                [53.9586237, -1.0828142],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.546750391832775, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_936e1b725c99eb5f581e9f9332fd83d8 = L.popup({"maxWidth": 320});
+
+        
+            var html_55e59762adc16b5d12dd752f057de461 = $(`<div id="html_55e59762adc16b5d12dd752f057de461" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce York</b><br>       Postcode: <b>YO1 6LR</b><br>       Value: 583     </div>     </div>`)[0];
+            popup_936e1b725c99eb5f581e9f9332fd83d8.setContent(html_55e59762adc16b5d12dd752f057de461);
+        
+
+        circle_marker_772883445210640ad9bacef67c23a251.bindPopup(popup_936e1b725c99eb5f581e9f9332fd83d8)
+        ;
+
+        
+    
+    
+            circle_marker_772883445210640ad9bacef67c23a251.bindTooltip(
+                `<div>
+                     Slug And Lettuce York (YO1 6LR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_47684c19cfb1bbcd21a3098ab7f3c268 = L.circleMarker(
+                [57.1353138, -2.1202461],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.532460757808723, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_22b894896a7e4acdb9942b83d02ffc78 = L.popup({"maxWidth": 320});
+
+        
+            var html_ca6214bf2af5c5234cddaea3f1b1b802 = $(`<div id="html_ca6214bf2af5c5234cddaea3f1b1b802" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Foundry Aberdeen</b><br>       Postcode: <b>AB10 6BR</b><br>       Value: 580     </div>     </div>`)[0];
+            popup_22b894896a7e4acdb9942b83d02ffc78.setContent(html_ca6214bf2af5c5234cddaea3f1b1b802);
+        
+
+        circle_marker_47684c19cfb1bbcd21a3098ab7f3c268.bindPopup(popup_22b894896a7e4acdb9942b83d02ffc78)
+        ;
+
+        
+    
+    
+            circle_marker_47684c19cfb1bbcd21a3098ab7f3c268.bindTooltip(
+                `<div>
+                     Foundry Aberdeen (AB10 6BR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_794cddab6adad9ac90c5d419b35bec0d = L.circleMarker(
+                [52.4445575, -1.8228123],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e6f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.508562327475971, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_9b85fc12e8a043895aa9044dc038d596 = L.popup({"maxWidth": 320});
+
+        
+            var html_0ca4b54f0a52163c46609045ee97475e = $(`<div id="html_0ca4b54f0a52163c46609045ee97475e" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Indigoxpress - Gospel Lane</b><br>       Postcode: <b>B27 7AJ</b><br>       Value: 575     </div>     </div>`)[0];
+            popup_9b85fc12e8a043895aa9044dc038d596.setContent(html_0ca4b54f0a52163c46609045ee97475e);
+        
+
+        circle_marker_794cddab6adad9ac90c5d419b35bec0d.bindPopup(popup_9b85fc12e8a043895aa9044dc038d596)
+        ;
+
+        
+    
+    
+            circle_marker_794cddab6adad9ac90c5d419b35bec0d.bindTooltip(
+                `<div>
+                     Indigoxpress - Gospel Lane (B27 7AJ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8e1b6906a6b6dfa68e4f7d7c2b05b990 = L.circleMarker(
+                [51.4824354, -0.3862521],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e7f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.460451691359932, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_19c10dd537cf5b98a8aa76a812e629c2 = L.popup({"maxWidth": 320});
+
+        
+            var html_377663cd170cc0c08481cc2af605af2d = $(`<div id="html_377663cd170cc0c08481cc2af605af2d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Queen's Head - High Street Cranford</b><br>       Postcode: <b>TW5 9PA</b><br>       Value: 565     </div>     </div>`)[0];
+            popup_19c10dd537cf5b98a8aa76a812e629c2.setContent(html_377663cd170cc0c08481cc2af605af2d);
+        
+
+        circle_marker_8e1b6906a6b6dfa68e4f7d7c2b05b990.bindPopup(popup_19c10dd537cf5b98a8aa76a812e629c2)
+        ;
+
+        
+    
+    
+            circle_marker_8e1b6906a6b6dfa68e4f7d7c2b05b990.bindTooltip(
+                `<div>
+                     The Queen's Head - High Street Cranford (TW5 9PA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a9c617a0f9e64a70a1d595cbec34c696 = L.circleMarker(
+                [51.5873411, -0.2243033],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e7f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.431380757088235, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_4bd42df4edef201d47ddc926d3a23a1f = L.popup({"maxWidth": 320});
+
+        
+            var html_6bc90a9e4574a233536295c0e52a4893 = $(`<div id="html_6bc90a9e4574a233536295c0e52a4893" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Soor Lounge & Lebanese Kitchen</b><br>       Postcode: <b>NW4 3AD</b><br>       Value: 559     </div>     </div>`)[0];
+            popup_4bd42df4edef201d47ddc926d3a23a1f.setContent(html_6bc90a9e4574a233536295c0e52a4893);
+        
+
+        circle_marker_a9c617a0f9e64a70a1d595cbec34c696.bindPopup(popup_4bd42df4edef201d47ddc926d3a23a1f)
+        ;
+
+        
+    
+    
+            circle_marker_a9c617a0f9e64a70a1d595cbec34c696.bindTooltip(
+                `<div>
+                     Soor Lounge & Lebanese Kitchen (NW4 3AD)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b4a63aa4a8a3f0f0db554a48198431ac = L.circleMarker(
+                [55.8376134, -4.2844564],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e7f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.416786783312112, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_f794f1ddb1c410b76e917c03734be228 = L.popup({"maxWidth": 320});
+
+        
+            var html_aad0cdd06301a30896ef43516fdade7a = $(`<div id="html_aad0cdd06301a30896ef43516fdade7a" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The James Tassie Glasgow</b><br>       Postcode: <b>G41 3YR</b><br>       Value: 556     </div>     </div>`)[0];
+            popup_f794f1ddb1c410b76e917c03734be228.setContent(html_aad0cdd06301a30896ef43516fdade7a);
+        
+
+        circle_marker_b4a63aa4a8a3f0f0db554a48198431ac.bindPopup(popup_f794f1ddb1c410b76e917c03734be228)
+        ;
+
+        
+    
+    
+            circle_marker_b4a63aa4a8a3f0f0db554a48198431ac.bindTooltip(
+                `<div>
+                     The James Tassie Glasgow (G41 3YR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8ed50d1a3822ae3c59206446a95ca994 = L.circleMarker(
+                [51.4414641, 0.0981804],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e7f871ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.407035584075842, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_f078dce78d245452ae67333e8018dbef = L.popup({"maxWidth": 320});
+
+        
+            var html_13757b117ec94d8261fc31c3c00778ed = $(`<div id="html_13757b117ec94d8261fc31c3c00778ed" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>George Staples Sidcup</b><br>       Postcode: <b>DA15 8PR</b><br>       Value: 554     </div>     </div>`)[0];
+            popup_f078dce78d245452ae67333e8018dbef.setContent(html_13757b117ec94d8261fc31c3c00778ed);
+        
+
+        circle_marker_8ed50d1a3822ae3c59206446a95ca994.bindPopup(popup_f078dce78d245452ae67333e8018dbef)
+        ;
+
+        
+    
+    
+            circle_marker_8ed50d1a3822ae3c59206446a95ca994.bindTooltip(
+                `<div>
+                     George Staples Sidcup (DA15 8PR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0241b66094c323265a781c656baa49c7 = L.circleMarker(
+                [52.5866097, -0.2380334],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e9f870ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.248553118053024, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_b691c14d87e5387052ae2b4b78d56c8e = L.popup({"maxWidth": 320});
+
+        
+            var html_711c50b7e9715e7e5e89550bd60ac10d = $(`<div id="html_711c50b7e9715e7e5e89550bd60ac10d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Fireaway Peterborough - Broadway Peterborough</b><br>       Postcode: <b>PE1 1SQ</b><br>       Value: 522     </div>     </div>`)[0];
+            popup_b691c14d87e5387052ae2b4b78d56c8e.setContent(html_711c50b7e9715e7e5e89550bd60ac10d);
+        
+
+        circle_marker_0241b66094c323265a781c656baa49c7.bindPopup(popup_b691c14d87e5387052ae2b4b78d56c8e)
+        ;
+
+        
+    
+    
+            circle_marker_0241b66094c323265a781c656baa49c7.bindTooltip(
+                `<div>
+                     Fireaway Peterborough - Broadway Peterborough (PE1 1SQ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bd4391bcd5914001f19039d9cc8b947f = L.circleMarker(
+                [52.4094028, -1.5065272],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e9f970ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.203110244383964, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_b6394989fc0202356d46fa8eac302c1a = L.popup({"maxWidth": 320});
+
+        
+            var html_9af16ef6d0df01f73550bc8c72547f96 = $(`<div id="html_9af16ef6d0df01f73550bc8c72547f96" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>STEAKOUT COVENTRY</b><br>       Postcode: <b>CV1 1GF</b><br>       Value: 513     </div>     </div>`)[0];
+            popup_b6394989fc0202356d46fa8eac302c1a.setContent(html_9af16ef6d0df01f73550bc8c72547f96);
+        
+
+        circle_marker_bd4391bcd5914001f19039d9cc8b947f.bindPopup(popup_b6394989fc0202356d46fa8eac302c1a)
+        ;
+
+        
+    
+    
+            circle_marker_bd4391bcd5914001f19039d9cc8b947f.bindTooltip(
+                `<div>
+                     STEAKOUT COVENTRY (CV1 1GF)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_50c9378d2239179b42b2d681343d93ac = L.circleMarker(
+                [53.2178821, -2.8689752],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e9f970ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.192957824478356, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_892e55e97a30fa363bf42f43ca354bed = L.popup({"maxWidth": 320});
+
+        
+            var html_acba3cdb16f54b3820c2a2db0c8c741a = $(`<div id="html_acba3cdb16f54b3820c2a2db0c8c741a" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Chicken Shop</b><br>       Postcode: <b>CH2 1QL</b><br>       Value: 511     </div>     </div>`)[0];
+            popup_892e55e97a30fa363bf42f43ca354bed.setContent(html_acba3cdb16f54b3820c2a2db0c8c741a);
+        
+
+        circle_marker_50c9378d2239179b42b2d681343d93ac.bindPopup(popup_892e55e97a30fa363bf42f43ca354bed)
+        ;
+
+        
+    
+    
+            circle_marker_50c9378d2239179b42b2d681343d93ac.bindTooltip(
+                `<div>
+                     The Chicken Shop (CH2 1QL)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_59acb58795f9fd11fc64d2c4d8da10ce = L.circleMarker(
+                [54.9061193, -1.3782118],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eaf970ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.141895051904406, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_943793f214b141f80b07769e7670beba = L.popup({"maxWidth": 320});
+
+        
+            var html_efc45ed09c220b6c8cbead23c2607786 = $(`<div id="html_efc45ed09c220b6c8cbead23c2607786" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Laser Quest - John Street</b><br>       Postcode: <b>SR1 1JG</b><br>       Value: 501     </div>     </div>`)[0];
+            popup_943793f214b141f80b07769e7670beba.setContent(html_efc45ed09c220b6c8cbead23c2607786);
+        
+
+        circle_marker_59acb58795f9fd11fc64d2c4d8da10ce.bindPopup(popup_943793f214b141f80b07769e7670beba)
+        ;
+
+        
+    
+    
+            circle_marker_59acb58795f9fd11fc64d2c4d8da10ce.bindTooltip(
+                `<div>
+                     Laser Quest - John Street (SR1 1JG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9ab5c008e6655c47f89fc3826b9893be = L.circleMarker(
+                [50.7886425, -1.0861972],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eaf970ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.116172554145631, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_f13c050d8c840cd7974e79b0e7e329b5 = L.popup({"maxWidth": 320});
+
+        
+            var html_b22d1d50ac879b5ad9f71dfed03f5320 = $(`<div id="html_b22d1d50ac879b5ad9f71dfed03f5320" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Scarlet Tap Southsea</b><br>       Postcode: <b>PO5 3PT</b><br>       Value: 496     </div>     </div>`)[0];
+            popup_f13c050d8c840cd7974e79b0e7e329b5.setContent(html_b22d1d50ac879b5ad9f71dfed03f5320);
+        
+
+        circle_marker_9ab5c008e6655c47f89fc3826b9893be.bindPopup(popup_f13c050d8c840cd7974e79b0e7e329b5)
+        ;
+
+        
+    
+    
+            circle_marker_9ab5c008e6655c47f89fc3826b9893be.bindTooltip(
+                `<div>
+                     Scarlet Tap Southsea (PO5 3PT)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5fd1026a8784741f1dbfd0153fe0edf0 = L.circleMarker(
+                [53.4209662, -2.3262749],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eaf96fff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.0591227241074, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_1c26b70c37e3dc2a4b460eac27fcdf89 = L.popup({"maxWidth": 320});
+
+        
+            var html_19360933561f2c8bad7d581c854ac71b = $(`<div id="html_19360933561f2c8bad7d581c854ac71b" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Sale</b><br>       Postcode: <b>M33 7BS</b><br>       Value: 485     </div>     </div>`)[0];
+            popup_1c26b70c37e3dc2a4b460eac27fcdf89.setContent(html_19360933561f2c8bad7d581c854ac71b);
+        
+
+        circle_marker_5fd1026a8784741f1dbfd0153fe0edf0.bindPopup(popup_1c26b70c37e3dc2a4b460eac27fcdf89)
+        ;
+
+        
+    
+    
+            circle_marker_5fd1026a8784741f1dbfd0153fe0edf0.bindTooltip(
+                `<div>
+                     Slug And Lettuce Sale (M33 7BS)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9a068b5ca9c7a256d58995261b48371b = L.circleMarker(
+                [51.913148, -0.1949772],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eaf96fff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.0591227241074, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_1492ef44bf5a4f144fde5618587d7073 = L.popup({"maxWidth": 320});
+
+        
+            var html_6dfb94f28592fadeba0b65d2c3c12347 = $(`<div id="html_6dfb94f28592fadeba0b65d2c3c12347" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Draper Arms L&T - Stevenage</b><br>       Postcode: <b>SG1 3DW</b><br>       Value: 485     </div>     </div>`)[0];
+            popup_1492ef44bf5a4f144fde5618587d7073.setContent(html_6dfb94f28592fadeba0b65d2c3c12347);
+        
+
+        circle_marker_9a068b5ca9c7a256d58995261b48371b.bindPopup(popup_1492ef44bf5a4f144fde5618587d7073)
+        ;
+
+        
+    
+    
+            circle_marker_9a068b5ca9c7a256d58995261b48371b.bindTooltip(
+                `<div>
+                     Draper Arms L&T - Stevenage (SG1 3DW)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_77909cf2525f2cbe235244fb1255465f = L.circleMarker(
+                [51.4869402, -2.5814899],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ebf96fff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.02773179399744, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_fe04bf9281ada22cd753e8f1925ed135 = L.popup({"maxWidth": 320});
+
+        
+            var html_1b8b5af32f29bb8ded63c27be88f450f = $(`<div id="html_1b8b5af32f29bb8ded63c27be88f450f" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Texas Grill - Gloucester Road</b><br>       Postcode: <b>BS7 8TR</b><br>       Value: 479     </div>     </div>`)[0];
+            popup_fe04bf9281ada22cd753e8f1925ed135.setContent(html_1b8b5af32f29bb8ded63c27be88f450f);
+        
+
+        circle_marker_77909cf2525f2cbe235244fb1255465f.bindPopup(popup_fe04bf9281ada22cd753e8f1925ed135)
+        ;
+
+        
+    
+    
+            circle_marker_77909cf2525f2cbe235244fb1255465f.bindTooltip(
+                `<div>
+                     Texas Grill - Gloucester Road (BS7 8TR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6e78cdb843a9ef1751b7161ea7e5296a = L.circleMarker(
+                [51.0132224, -3.1028526],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ebf96fff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 9.006695167030635, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_cf6a35e0d7c4a3dd19d94252492620a7 = L.popup({"maxWidth": 320});
+
+        
+            var html_85b2178e66ebe8435cf1aa661b389d32 = $(`<div id="html_85b2178e66ebe8435cf1aa661b389d32" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Somerset Masala - Heron Gate</b><br>       Postcode: <b>TA1 2LP</b><br>       Value: 475     </div>     </div>`)[0];
+            popup_cf6a35e0d7c4a3dd19d94252492620a7.setContent(html_85b2178e66ebe8435cf1aa661b389d32);
+        
+
+        circle_marker_6e78cdb843a9ef1751b7161ea7e5296a.bindPopup(popup_cf6a35e0d7c4a3dd19d94252492620a7)
+        ;
+
+        
+    
+    
+            circle_marker_6e78cdb843a9ef1751b7161ea7e5296a.bindTooltip(
+                `<div>
+                     Somerset Masala - Heron Gate (TA1 2LP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e39f0947ada682046ce194c37cd07937 = L.circleMarker(
+                [51.4451387, 0.0548051],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#edfa6eff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.785741207307275, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_84ab45cca6f653fc4405479f1811260c = L.popup({"maxWidth": 320});
+
+        
+            var html_d4332148c180059a2bb4281edef2a1a7 = $(`<div id="html_d4332148c180059a2bb4281edef2a1a7" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Two Happy Chefs</b><br>       Postcode: <b>SE9 1TX</b><br>       Value: 434     </div>     </div>`)[0];
+            popup_84ab45cca6f653fc4405479f1811260c.setContent(html_d4332148c180059a2bb4281edef2a1a7);
+        
+
+        circle_marker_e39f0947ada682046ce194c37cd07937.bindPopup(popup_84ab45cca6f653fc4405479f1811260c)
+        ;
+
+        
+    
+    
+            circle_marker_e39f0947ada682046ce194c37cd07937.bindTooltip(
+                `<div>
+                     Two Happy Chefs (SE9 1TX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_38ee8fe5ce001120f861a7ea6c13f8e8 = L.circleMarker(
+                [53.6123706, -2.1313519],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#edfa6eff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.763636048914119, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_83ebb2b3965d440fcd69f9cca39bd102 = L.popup({"maxWidth": 320});
+
+        
+            var html_e1dc8cadddf2d66420ec3197d08bbdf0 = $(`<div id="html_e1dc8cadddf2d66420ec3197d08bbdf0" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Fireaway Rochdale - Milnrow Precinct</b><br>       Postcode: <b>OL16 4JD</b><br>       Value: 430     </div>     </div>`)[0];
+            popup_83ebb2b3965d440fcd69f9cca39bd102.setContent(html_e1dc8cadddf2d66420ec3197d08bbdf0);
+        
+
+        circle_marker_38ee8fe5ce001120f861a7ea6c13f8e8.bindPopup(popup_83ebb2b3965d440fcd69f9cca39bd102)
+        ;
+
+        
+    
+    
+            circle_marker_38ee8fe5ce001120f861a7ea6c13f8e8.bindTooltip(
+                `<div>
+                     Fireaway Rochdale - Milnrow Precinct (OL16 4JD)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6cc937091efeecbddc507e8370d84000 = L.circleMarker(
+                [53.4542967, -2.7561819],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#eefa6eff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.65720394085243, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_85ddac7414f1612a5d4360b2257c42c9 = L.popup({"maxWidth": 320});
+
+        
+            var html_ea2ae69a96ab8d1e6980ec7e9b6fa7af = $(`<div id="html_ea2ae69a96ab8d1e6980ec7e9b6fa7af" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Sefton St Helens</b><br>       Postcode: <b>WA10 1SB</b><br>       Value: 411     </div>     </div>`)[0];
+            popup_85ddac7414f1612a5d4360b2257c42c9.setContent(html_ea2ae69a96ab8d1e6980ec7e9b6fa7af);
+        
+
+        circle_marker_6cc937091efeecbddc507e8370d84000.bindPopup(popup_85ddac7414f1612a5d4360b2257c42c9)
+        ;
+
+        
+    
+    
+            circle_marker_6cc937091efeecbddc507e8370d84000.bindTooltip(
+                `<div>
+                     The Sefton St Helens (WA10 1SB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_394721cc59dfd225ad3a7957a943200e = L.circleMarker(
+                [51.2373631, -0.1576051],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f0fb6dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.400858221056296, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_4f6e84d41b9f61699dc14d6d97acc4df = L.popup({"maxWidth": 320});
+
+        
+            var html_f2d3aad738cbfcc4540a2f22a6c64f55 = $(`<div id="html_f2d3aad738cbfcc4540a2f22a6c64f55" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Chilli Hut - Timperley Court</b><br>       Postcode: <b>RH1 2AU</b><br>       Value: 367     </div>     </div>`)[0];
+            popup_4f6e84d41b9f61699dc14d6d97acc4df.setContent(html_f2d3aad738cbfcc4540a2f22a6c64f55);
+        
+
+        circle_marker_394721cc59dfd225ad3a7957a943200e.bindPopup(popup_4f6e84d41b9f61699dc14d6d97acc4df)
+        ;
+
+        
+    
+    
+            circle_marker_394721cc59dfd225ad3a7957a943200e.bindTooltip(
+                `<div>
+                     Chilli Hut - Timperley Court (RH1 2AU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1e9e5d3d17dd78a86b076e270deb5cd9 = L.circleMarker(
+                [52.3800111, -4.051249],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f0fb6dff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.340486935797276, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_9d27712fbe35f6b167cd0c24db11ec18 = L.popup({"maxWidth": 320});
+
+        
+            var html_84e9adcceaf4717bff4013b524621a9c = $(`<div id="html_84e9adcceaf4717bff4013b524621a9c" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The White Horse Aberystwyth</b><br>       Postcode: <b>SY23 2DT</b><br>       Value: 357     </div>     </div>`)[0];
+            popup_9d27712fbe35f6b167cd0c24db11ec18.setContent(html_84e9adcceaf4717bff4013b524621a9c);
+        
+
+        circle_marker_1e9e5d3d17dd78a86b076e270deb5cd9.bindPopup(popup_9d27712fbe35f6b167cd0c24db11ec18)
+        ;
+
+        
+    
+    
+            circle_marker_1e9e5d3d17dd78a86b076e270deb5cd9.bindTooltip(
+                `<div>
+                     The White Horse Aberystwyth (SY23 2DT)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ed5f8a3a867d6f8dcad0bbba5e6a0e42 = L.circleMarker(
+                [50.4138677, -5.0748401],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f1fb6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.154112193211802, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_8a674f0b15aaa1e031c4d3f00e5ce5c5 = L.popup({"maxWidth": 320});
+
+        
+            var html_3567038622dd76d7a84df43433be9444 = $(`<div id="html_3567038622dd76d7a84df43433be9444" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Walkabout Newquay</b><br>       Postcode: <b>TR7</b><br>       Value: 327     </div>     </div>`)[0];
+            popup_8a674f0b15aaa1e031c4d3f00e5ce5c5.setContent(html_3567038622dd76d7a84df43433be9444);
+        
+
+        circle_marker_ed5f8a3a867d6f8dcad0bbba5e6a0e42.bindPopup(popup_8a674f0b15aaa1e031c4d3f00e5ce5c5)
+        ;
+
+        
+    
+    
+            circle_marker_ed5f8a3a867d6f8dcad0bbba5e6a0e42.bindTooltip(
+                `<div>
+                     Walkabout Newquay (TR7)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_00b4e98c3b4045bca69dae6e9bf54755 = L.circleMarker(
+                [53.0153757, -2.2395729],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2fb6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.018510047961293, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_6374e8df0421f97c0e6445e3c01bb4c9 = L.popup({"maxWidth": 320});
+
+        
+            var html_5ccd6815fa495b85aef6e6461269af94 = $(`<div id="html_5ccd6815fa495b85aef6e6461269af94" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Gatehouse Clayton - Clayton Rd</b><br>       Postcode: <b>ST5 3HR</b><br>       Value: 306     </div>     </div>`)[0];
+            popup_6374e8df0421f97c0e6445e3c01bb4c9.setContent(html_5ccd6815fa495b85aef6e6461269af94);
+        
+
+        circle_marker_00b4e98c3b4045bca69dae6e9bf54755.bindPopup(popup_6374e8df0421f97c0e6445e3c01bb4c9)
+        ;
+
+        
+    
+    
+            circle_marker_00b4e98c3b4045bca69dae6e9bf54755.bindTooltip(
+                `<div>
+                     Gatehouse Clayton - Clayton Rd (ST5 3HR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_580eec66e99776a04a0f596b7ed51906 = L.circleMarker(
+                [52.4046781, -0.7057147],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2fb6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.011938481752264, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_642f625bf28ff1ef432c21d383667cd4 = L.popup({"maxWidth": 320});
+
+        
+            var html_6ef94f6e4610c80608b241defce4633b = $(`<div id="html_6ef94f6e4610c80608b241defce4633b" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>TomTom's Burger Mania - Market Street Kettering</b><br>       Postcode: <b>NN16 0AH</b><br>       Value: 305     </div>     </div>`)[0];
+            popup_642f625bf28ff1ef432c21d383667cd4.setContent(html_6ef94f6e4610c80608b241defce4633b);
+        
+
+        circle_marker_580eec66e99776a04a0f596b7ed51906.bindPopup(popup_642f625bf28ff1ef432c21d383667cd4)
+        ;
+
+        
+    
+    
+            circle_marker_580eec66e99776a04a0f596b7ed51906.bindTooltip(
+                `<div>
+                     TomTom's Burger Mania - Market Street Kettering (NN16 0AH)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f2d49acbc0b49c812dd59b71b326e9af = L.circleMarker(
+                [53.7573394, -2.7017204],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2fb6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.011938481752264, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_67df6fce483b166d69630c3911b6e65b = L.popup({"maxWidth": 320});
+
+        
+            var html_f59be977c3a9c5e5953399af81b28d73 = $(`<div id="html_f59be977c3a9c5e5953399af81b28d73" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug and Lettuce Preston</b><br>       Postcode: <b>PR1 3AB</b><br>       Value: 305     </div>     </div>`)[0];
+            popup_67df6fce483b166d69630c3911b6e65b.setContent(html_f59be977c3a9c5e5953399af81b28d73);
+        
+
+        circle_marker_f2d49acbc0b49c812dd59b71b326e9af.bindPopup(popup_67df6fce483b166d69630c3911b6e65b)
+        ;
+
+        
+    
+    
+            circle_marker_f2d49acbc0b49c812dd59b71b326e9af.bindTooltip(
+                `<div>
+                     Slug and Lettuce Preston (PR1 3AB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c5996e63d81f13c304fa8e0a47245578 = L.circleMarker(
+                [51.7753987, 0.1026721],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f2fb6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 8.011938481752264, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_89444b3a5e9072c1c5f9f6b78d51ebbf = L.popup({"maxWidth": 320});
+
+        
+            var html_d2571f0576b8fefc33efb6dfaa2b6f66 = $(`<div id="html_d2571f0576b8fefc33efb6dfaa2b6f66" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Royal Kebabs</b><br>       Postcode: <b>CM20 1HP</b><br>       Value: 305     </div>     </div>`)[0];
+            popup_89444b3a5e9072c1c5f9f6b78d51ebbf.setContent(html_d2571f0576b8fefc33efb6dfaa2b6f66);
+        
+
+        circle_marker_c5996e63d81f13c304fa8e0a47245578.bindPopup(popup_89444b3a5e9072c1c5f9f6b78d51ebbf)
+        ;
+
+        
+    
+    
+            circle_marker_c5996e63d81f13c304fa8e0a47245578.bindTooltip(
+                `<div>
+                     Royal Kebabs (CM20 1HP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_859821e9dcaa32e137fbd724e94a901d = L.circleMarker(
+                [51.0750553, -1.8258872],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3fc6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.958973274443148, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_9deb3e729bb5ffb5c7b7f42228d1a948 = L.popup({"maxWidth": 320});
+
+        
+            var html_4f3985428d8600431333b15910a3c16d = $(`<div id="html_4f3985428d8600431333b15910a3c16d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Bridge Tap Salisbury</b><br>       Postcode: <b>SP2 7RG</b><br>       Value: 297     </div>     </div>`)[0];
+            popup_9deb3e729bb5ffb5c7b7f42228d1a948.setContent(html_4f3985428d8600431333b15910a3c16d);
+        
+
+        circle_marker_859821e9dcaa32e137fbd724e94a901d.bindPopup(popup_9deb3e729bb5ffb5c7b7f42228d1a948)
+        ;
+
+        
+    
+    
+            circle_marker_859821e9dcaa32e137fbd724e94a901d.bindTooltip(
+                `<div>
+                     The Bridge Tap Salisbury (SP2 7RG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ba1a0f0663c061e9838e349f5d77acc3 = L.circleMarker(
+                [55.0243325, -1.5705744],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3fc6cff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.912040518495013, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_eb4111579942827ba685d70bad8966a3 = L.popup({"maxWidth": 320});
+
+        
+            var html_949f2b72de29da39f00a04b16085b5e2 = $(`<div id="html_949f2b72de29da39f00a04b16085b5e2" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Big Bite Pizza - Newcastle - Espley Close</b><br>       Postcode: <b>NE12 9SZ</b><br>       Value: 290     </div>     </div>`)[0];
+            popup_eb4111579942827ba685d70bad8966a3.setContent(html_949f2b72de29da39f00a04b16085b5e2);
+        
+
+        circle_marker_ba1a0f0663c061e9838e349f5d77acc3.bindPopup(popup_eb4111579942827ba685d70bad8966a3)
+        ;
+
+        
+    
+    
+            circle_marker_ba1a0f0663c061e9838e349f5d77acc3.bindTooltip(
+                `<div>
+                     Big Bite Pizza - Newcastle - Espley Close (NE12 9SZ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b28f5ab074b0bd48ea7ee784d74e48b2 = L.circleMarker(
+                [51.5572096, 0.1293935],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.891753222616144, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_e736a4ddd07a4905a146f504ede3df51 = L.popup({"maxWidth": 320});
+
+        
+            var html_cc93829784b74f0cc6b239848f9e569b = $(`<div id="html_cc93829784b74f0cc6b239848f9e569b" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Dubai Express Pizza - Bennetts Castle Lane</b><br>       Postcode: <b>RM8 3XU</b><br>       Value: 287     </div>     </div>`)[0];
+            popup_e736a4ddd07a4905a146f504ede3df51.setContent(html_cc93829784b74f0cc6b239848f9e569b);
+        
+
+        circle_marker_b28f5ab074b0bd48ea7ee784d74e48b2.bindPopup(popup_e736a4ddd07a4905a146f504ede3df51)
+        ;
+
+        
+    
+    
+            circle_marker_b28f5ab074b0bd48ea7ee784d74e48b2.bindTooltip(
+                `<div>
+                     Dubai Express Pizza - Bennetts Castle Lane (RM8 3XU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3fee8c97e2b1219de60adb24b0fb375c = L.circleMarker(
+                [51.5750029, 0.5109302],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.8849672484516455, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_126618dac19d6f4d72a4386099b44b87 = L.popup({"maxWidth": 320});
+
+        
+            var html_c746ea675d11dadb8a360d1f9c27b0d2 = $(`<div id="html_c746ea675d11dadb8a360d1f9c27b0d2" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Delhi Pizza Naan</b><br>       Postcode: <b>SS13 1EU</b><br>       Value: 286     </div>     </div>`)[0];
+            popup_126618dac19d6f4d72a4386099b44b87.setContent(html_c746ea675d11dadb8a360d1f9c27b0d2);
+        
+
+        circle_marker_3fee8c97e2b1219de60adb24b0fb375c.bindPopup(popup_126618dac19d6f4d72a4386099b44b87)
+        ;
+
+        
+    
+    
+            circle_marker_3fee8c97e2b1219de60adb24b0fb375c.bindTooltip(
+                `<div>
+                     Delhi Pizza Naan (SS13 1EU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_57416c218bb6787f8de6501ab8dfad65 = L.circleMarker(
+                [50.7210819, -1.8840411],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.8849672484516455, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_62c3a2a433f14857e434e6632ea90462 = L.popup({"maxWidth": 320});
+
+        
+            var html_d6b76b01058093c0798807089799a19b = $(`<div id="html_d6b76b01058093c0798807089799a19b" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Bournemouth</b><br>       Postcode: <b>BH2 6HT</b><br>       Value: 286     </div>     </div>`)[0];
+            popup_62c3a2a433f14857e434e6632ea90462.setContent(html_d6b76b01058093c0798807089799a19b);
+        
+
+        circle_marker_57416c218bb6787f8de6501ab8dfad65.bindPopup(popup_62c3a2a433f14857e434e6632ea90462)
+        ;
+
+        
+    
+    
+            circle_marker_57416c218bb6787f8de6501ab8dfad65.bindTooltip(
+                `<div>
+                     Slug And Lettuce Bournemouth (BH2 6HT)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c939e182b2bbf060d185cf49565cf39b = L.circleMarker(
+                [50.8508807, -1.1591621],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f3fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.8371294156092235, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_d601043c461e8b22db832b74de3963a9 = L.popup({"maxWidth": 320});
+
+        
+            var html_2bae17abcf79a668bb5c22368fbc9855 = $(`<div id="html_2bae17abcf79a668bb5c22368fbc9855" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Ember & Ice L&T - West St</b><br>       Postcode: <b>PO16 0JN</b><br>       Value: 279     </div>     </div>`)[0];
+            popup_d601043c461e8b22db832b74de3963a9.setContent(html_2bae17abcf79a668bb5c22368fbc9855);
+        
+
+        circle_marker_c939e182b2bbf060d185cf49565cf39b.bindPopup(popup_d601043c461e8b22db832b74de3963a9)
+        ;
+
+        
+    
+    
+            circle_marker_c939e182b2bbf060d185cf49565cf39b.bindTooltip(
+                `<div>
+                     Ember & Ice L&T - West St (PO16 0JN)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_58a537c0c92eacd07f6d8642d605c12e = L.circleMarker(
+                [51.7451905, -1.2614253],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.7325557985267475, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_f6a58429f40ce5d56d8dfcefdeefb31f = L.popup({"maxWidth": 320});
+
+        
+            var html_68acae51962bb262a5ff5f32a6f8104b = $(`<div id="html_68acae51962bb262a5ff5f32a6f8104b" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug and Lettuce Oxford</b><br>       Postcode: <b>OX1 1AY</b><br>       Value: 264     </div>     </div>`)[0];
+            popup_f6a58429f40ce5d56d8dfcefdeefb31f.setContent(html_68acae51962bb262a5ff5f32a6f8104b);
+        
+
+        circle_marker_58a537c0c92eacd07f6d8642d605c12e.bindPopup(popup_f6a58429f40ce5d56d8dfcefdeefb31f)
+        ;
+
+        
+    
+    
+            circle_marker_58a537c0c92eacd07f6d8642d605c12e.bindTooltip(
+                `<div>
+                     Slug and Lettuce Oxford (OX1 1AY)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3db8ea70499cf82524da96b9cbddc383 = L.circleMarker(
+                [51.8840222, 0.8963748],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f4fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.718390450277278, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_c42aa041ebfb832f3bcb13deebc589ea = L.popup({"maxWidth": 320});
+
+        
+            var html_ce14f3435837edae906fecf787379b09 = $(`<div id="html_ce14f3435837edae906fecf787379b09" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Big Juicy Burgers - High Street Colchester</b><br>       Postcode: <b>CO1 1DA</b><br>       Value: 262     </div>     </div>`)[0];
+            popup_c42aa041ebfb832f3bcb13deebc589ea.setContent(html_ce14f3435837edae906fecf787379b09);
+        
+
+        circle_marker_3db8ea70499cf82524da96b9cbddc383.bindPopup(popup_c42aa041ebfb832f3bcb13deebc589ea)
+        ;
+
+        
+    
+    
+            circle_marker_3db8ea70499cf82524da96b9cbddc383.bindTooltip(
+                `<div>
+                     Big Juicy Burgers - High Street Colchester (CO1 1DA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a31fed28c2a4a5701831df380d5b7841 = L.circleMarker(
+                [52.3032613, -0.6996321],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f5fc6bff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.581026065374355, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_68f49abf4b820892dea39e18bb454117 = L.popup({"maxWidth": 320});
+
+        
+            var html_8b71796f89893be455d1263b457b619f = $(`<div id="html_8b71796f89893be455d1263b457b619f" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Fireaway Pizza Wellingborough - Pebble Lane</b><br>       Postcode: <b>NN8 1AS</b><br>       Value: 243     </div>     </div>`)[0];
+            popup_68f49abf4b820892dea39e18bb454117.setContent(html_8b71796f89893be455d1263b457b619f);
+        
+
+        circle_marker_a31fed28c2a4a5701831df380d5b7841.bindPopup(popup_68f49abf4b820892dea39e18bb454117)
+        ;
+
+        
+    
+    
+            circle_marker_a31fed28c2a4a5701831df380d5b7841.bindTooltip(
+                `<div>
+                     Fireaway Pizza Wellingborough - Pebble Lane (NN8 1AS)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_49e4bfd3f25988479dd3b9f194421efd = L.circleMarker(
+                [52.8135538, -2.1201818],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f5fc6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.521585819951144, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_51f930ba6892e602167813f447df8570 = L.popup({"maxWidth": 320});
+
+        
+            var html_6f9b54e425d20d9f3a39e1f87b5d403d = $(`<div id="html_6f9b54e425d20d9f3a39e1f87b5d403d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Yard Stafford</b><br>       Postcode: <b>ST16 2EZ</b><br>       Value: 235     </div>     </div>`)[0];
+            popup_51f930ba6892e602167813f447df8570.setContent(html_6f9b54e425d20d9f3a39e1f87b5d403d);
+        
+
+        circle_marker_49e4bfd3f25988479dd3b9f194421efd.bindPopup(popup_51f930ba6892e602167813f447df8570)
+        ;
+
+        
+    
+    
+            circle_marker_49e4bfd3f25988479dd3b9f194421efd.bindTooltip(
+                `<div>
+                     The Yard Stafford (ST16 2EZ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_18b750bc4d8e89f92cb63c46a1287b30 = L.circleMarker(
+                [52.9547046, -1.1485826],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f6fc6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.483920717564479, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_bc6f4e39cb3d6914d18855847ae74ff3 = L.popup({"maxWidth": 320});
+
+        
+            var html_787c194a7d7b68322ad2012636aa1b08 = $(`<div id="html_787c194a7d7b68322ad2012636aa1b08" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>JiJi Kitchen - Hounds Gate</b><br>       Postcode: <b>NG1 7AB</b><br>       Value: 230     </div>     </div>`)[0];
+            popup_bc6f4e39cb3d6914d18855847ae74ff3.setContent(html_787c194a7d7b68322ad2012636aa1b08);
+        
+
+        circle_marker_18b750bc4d8e89f92cb63c46a1287b30.bindPopup(popup_bc6f4e39cb3d6914d18855847ae74ff3)
+        ;
+
+        
+    
+    
+            circle_marker_18b750bc4d8e89f92cb63c46a1287b30.bindTooltip(
+                `<div>
+                     JiJi Kitchen - Hounds Gate (NG1 7AB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0f554b87385a8b7d7f332083cb0f822f = L.circleMarker(
+                [51.6366698, -0.0997398],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f6fc6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.468740162922643, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_6a37fcfd8a2e9f288a457122a26702c9 = L.popup({"maxWidth": 320});
+
+        
+            var html_7be6c76ffa267b11bf01e3c0080c68ae = $(`<div id="html_7be6c76ffa267b11bf01e3c0080c68ae" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Lopen Raj Continental - Green Lanes</b><br>       Postcode: <b>N21 2RT</b><br>       Value: 228     </div>     </div>`)[0];
+            popup_6a37fcfd8a2e9f288a457122a26702c9.setContent(html_7be6c76ffa267b11bf01e3c0080c68ae);
+        
+
+        circle_marker_0f554b87385a8b7d7f332083cb0f822f.bindPopup(popup_6a37fcfd8a2e9f288a457122a26702c9)
+        ;
+
+        
+    
+    
+            circle_marker_0f554b87385a8b7d7f332083cb0f822f.bindTooltip(
+                `<div>
+                     Lopen Raj Continental - Green Lanes (N21 2RT)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c1f01efec846668fc2ef9cce66334e0d = L.circleMarker(
+                [53.6048216, -2.3275802],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f6fd6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.445843938031584, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_5b9fdf0b69566f2cc34ebc31dce6bea1 = L.popup({"maxWidth": 320});
+
+        
+            var html_cba5ed8e88c02c261af162c80f04c1b2 = $(`<div id="html_cba5ed8e88c02c261af162c80f04c1b2" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Fireaway Bury - Bolton Road</b><br>       Postcode: <b>BL8 2AB</b><br>       Value: 225     </div>     </div>`)[0];
+            popup_5b9fdf0b69566f2cc34ebc31dce6bea1.setContent(html_cba5ed8e88c02c261af162c80f04c1b2);
+        
+
+        circle_marker_c1f01efec846668fc2ef9cce66334e0d.bindPopup(popup_5b9fdf0b69566f2cc34ebc31dce6bea1)
+        ;
+
+        
+    
+    
+            circle_marker_c1f01efec846668fc2ef9cce66334e0d.bindTooltip(
+                `<div>
+                     Fireaway Bury - Bolton Road (BL8 2AB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bd1a7b831545fe1762991e0a803c5387 = L.circleMarker(
+                [51.5869039, -0.0207805],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f6fd6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.445843938031584, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_e7730cc2d5a984765dd50e19fbc06085 = L.popup({"maxWidth": 320});
+
+        
+            var html_91a0456f9918c1c57281e4aaa0873d26 = $(`<div id="html_91a0456f9918c1c57281e4aaa0873d26" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>EATaliano Pizzeria - Walthamstow</b><br>       Postcode: <b>E17 4PG</b><br>       Value: 225     </div>     </div>`)[0];
+            popup_e7730cc2d5a984765dd50e19fbc06085.setContent(html_91a0456f9918c1c57281e4aaa0873d26);
+        
+
+        circle_marker_bd1a7b831545fe1762991e0a803c5387.bindPopup(popup_e7730cc2d5a984765dd50e19fbc06085)
+        ;
+
+        
+    
+    
+            circle_marker_bd1a7b831545fe1762991e0a803c5387.bindTooltip(
+                `<div>
+                     EATaliano Pizzeria - Walthamstow (E17 4PG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b6eac00ce63fb3a47806532adca1c9ae = L.circleMarker(
+                [52.4514517, -2.0699158],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f6fd6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.399588901626466, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_d7c7d5559347db2e5133e5df711ef4cd = L.popup({"maxWidth": 320});
+
+        
+            var html_05af9331cf270ccd0e2d9183823dd5a9 = $(`<div id="html_05af9331cf270ccd0e2d9183823dd5a9" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Dixy Chicken (Halesowen) - High Street Halesowen</b><br>       Postcode: <b>B63 3BG</b><br>       Value: 219     </div>     </div>`)[0];
+            popup_d7c7d5559347db2e5133e5df711ef4cd.setContent(html_05af9331cf270ccd0e2d9183823dd5a9);
+        
+
+        circle_marker_b6eac00ce63fb3a47806532adca1c9ae.bindPopup(popup_d7c7d5559347db2e5133e5df711ef4cd)
+        ;
+
+        
+    
+    
+            circle_marker_b6eac00ce63fb3a47806532adca1c9ae.bindTooltip(
+                `<div>
+                     Dixy Chicken (Halesowen) - High Street Halesowen (B63 3BG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a7378a97b9c571dba4eda86fd743cbeb = L.circleMarker(
+                [55.8577477, -4.3165267],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f7fd6aff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 7.329001514305916, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_2fd507c4accdf26aec1c021154469f9f = L.popup({"maxWidth": 320});
+
+        
+            var html_707d85b686939807d2f2abd58a23d0ad = $(`<div id="html_707d85b686939807d2f2abd58a23d0ad" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Mexita Govan - Govan Road</b><br>       Postcode: <b>G51 3DU</b><br>       Value: 210     </div>     </div>`)[0];
+            popup_2fd507c4accdf26aec1c021154469f9f.setContent(html_707d85b686939807d2f2abd58a23d0ad);
+        
+
+        circle_marker_a7378a97b9c571dba4eda86fd743cbeb.bindPopup(popup_2fd507c4accdf26aec1c021154469f9f)
+        ;
+
+        
+    
+    
+            circle_marker_a7378a97b9c571dba4eda86fd743cbeb.bindTooltip(
+                `<div>
+                     Mexita Govan - Govan Road (G51 3DU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b25b98243db3b49b4f8b055b9fe3203b = L.circleMarker(
+                [51.4305427, -0.1023126],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fd69ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.995220545169129, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_bbcf214c75410621ac6391f2975d226a = L.popup({"maxWidth": 320});
+
+        
+            var html_36d91b1d4ff2d69bc712a5a8ef49e366 = $(`<div id="html_36d91b1d4ff2d69bc712a5a8ef49e366" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Godfather Pizza</b><br>       Postcode: <b>SE27 9AZ</b><br>       Value: 170     </div>     </div>`)[0];
+            popup_bbcf214c75410621ac6391f2975d226a.setContent(html_36d91b1d4ff2d69bc712a5a8ef49e366);
+        
+
+        circle_marker_b25b98243db3b49b4f8b055b9fe3203b.bindPopup(popup_bbcf214c75410621ac6391f2975d226a)
+        ;
+
+        
+    
+    
+            circle_marker_b25b98243db3b49b4f8b055b9fe3203b.bindTooltip(
+                `<div>
+                     Godfather Pizza (SE27 9AZ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ba0cd16f02aaaa83ba119a3391aa5502 = L.circleMarker(
+                [52.1173913, -0.4724081],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f8fd69ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.959772899632416, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_7513ccf0d805c77b8d0ec7bbfb0de487 = L.popup({"maxWidth": 320});
+
+        
+            var html_bef7040517ae4e67afde1df89f18e9b4 = $(`<div id="html_bef7040517ae4e67afde1df89f18e9b4" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>G's Takeaway - St John's Street</b><br>       Postcode: <b>MK42 8EP</b><br>       Value: 166     </div>     </div>`)[0];
+            popup_7513ccf0d805c77b8d0ec7bbfb0de487.setContent(html_bef7040517ae4e67afde1df89f18e9b4);
+        
+
+        circle_marker_ba0cd16f02aaaa83ba119a3391aa5502.bindPopup(popup_7513ccf0d805c77b8d0ec7bbfb0de487)
+        ;
+
+        
+    
+    
+            circle_marker_ba0cd16f02aaaa83ba119a3391aa5502.bindTooltip(
+                `<div>
+                     G's Takeaway - St John's Street (MK42 8EP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_62495afa09f918cc8ee598cce29c76c4 = L.circleMarker(
+                [51.5471369, 0.027572],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f9fd69ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.887572444768946, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_7c2bc9bd0041144f0a9fc85f261bc717 = L.popup({"maxWidth": 320});
+
+        
+            var html_92d907a2b8be8aad7327b3b60cb43ab7 = $(`<div id="html_92d907a2b8be8aad7327b3b60cb43ab7" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Bismillah Fried Chicken (BFC) - Romford Road</b><br>       Postcode: <b>E7 8DF</b><br>       Value: 158     </div>     </div>`)[0];
+            popup_7c2bc9bd0041144f0a9fc85f261bc717.setContent(html_92d907a2b8be8aad7327b3b60cb43ab7);
+        
+
+        circle_marker_62495afa09f918cc8ee598cce29c76c4.bindPopup(popup_7c2bc9bd0041144f0a9fc85f261bc717)
+        ;
+
+        
+    
+    
+            circle_marker_62495afa09f918cc8ee598cce29c76c4.bindTooltip(
+                `<div>
+                     Bismillah Fried Chicken (BFC) - Romford Road (E7 8DF)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ea2117b52c0d2632496e977796c056b0 = L.circleMarker(
+                [51.4276663, -0.5044353],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f9fe69ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.766230378904361, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_02c111f12301037b8f98d7229a5d1cd9 = L.popup({"maxWidth": 320});
+
+        
+            var html_5b0646fedf1b758e31716c67d070c38a = $(`<div id="html_5b0646fedf1b758e31716c67d070c38a" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Staines</b><br>       Postcode: <b>TW18 4BU</b><br>       Value: 145     </div>     </div>`)[0];
+            popup_02c111f12301037b8f98d7229a5d1cd9.setContent(html_5b0646fedf1b758e31716c67d070c38a);
+        
+
+        circle_marker_ea2117b52c0d2632496e977796c056b0.bindPopup(popup_02c111f12301037b8f98d7229a5d1cd9)
+        ;
+
+        
+    
+    
+            circle_marker_ea2117b52c0d2632496e977796c056b0.bindTooltip(
+                `<div>
+                     Slug And Lettuce Staines (TW18 4BU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6a0baeb92dc28408f65e26d3606c99f9 = L.circleMarker(
+                [51.4045675, -0.0305611],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fafe69ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.7278086465821945, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_bf8de5cbecb17ada460ec2049f62638e = L.popup({"maxWidth": 320});
+
+        
+            var html_08029f171237c1ccd300f0e5e10136f8 = $(`<div id="html_08029f171237c1ccd300f0e5e10136f8" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The Prince</b><br>       Postcode: <b>BR3 5NP</b><br>       Value: 141     </div>     </div>`)[0];
+            popup_bf8de5cbecb17ada460ec2049f62638e.setContent(html_08029f171237c1ccd300f0e5e10136f8);
+        
+
+        circle_marker_6a0baeb92dc28408f65e26d3606c99f9.bindPopup(popup_bf8de5cbecb17ada460ec2049f62638e)
+        ;
+
+        
+    
+    
+            circle_marker_6a0baeb92dc28408f65e26d3606c99f9.bindTooltip(
+                `<div>
+                     The Prince (BR3 5NP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c97cfe5393899d807545fbe314e62f3e = L.circleMarker(
+                [51.5829293, -0.1198918],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fafe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.679006698640861, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_95d0d7ae92af1968c79a8db992f10e68 = L.popup({"maxWidth": 320});
+
+        
+            var html_aca6057651a35ed6f8dd7180d606ed3e = $(`<div id="html_aca6057651a35ed6f8dd7180d606ed3e" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Hornsey Kitchen - Tottenham Lane</b><br>       Postcode: <b>N8 9BG</b><br>       Value: 136     </div>     </div>`)[0];
+            popup_95d0d7ae92af1968c79a8db992f10e68.setContent(html_aca6057651a35ed6f8dd7180d606ed3e);
+        
+
+        circle_marker_c97cfe5393899d807545fbe314e62f3e.bindPopup(popup_95d0d7ae92af1968c79a8db992f10e68)
+        ;
+
+        
+    
+    
+            circle_marker_c97cfe5393899d807545fbe314e62f3e.bindTooltip(
+                `<div>
+                     Hornsey Kitchen - Tottenham Lane (N8 9BG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8471d4c1de2c4ddd611cfd0c9d6ad312 = L.circleMarker(
+                [51.3592543, -2.3793066],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fafe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.599018256525537, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_07f4ed403cec08ca517f6db68456cd5c = L.popup({"maxWidth": 320});
+
+        
+            var html_a494096dd15505d7fa3d97f5b644c0ff = $(`<div id="html_a494096dd15505d7fa3d97f5b644c0ff" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Goulash</b><br>       Postcode: <b>BA2 3BG</b><br>       Value: 128     </div>     </div>`)[0];
+            popup_07f4ed403cec08ca517f6db68456cd5c.setContent(html_a494096dd15505d7fa3d97f5b644c0ff);
+        
+
+        circle_marker_8471d4c1de2c4ddd611cfd0c9d6ad312.bindPopup(popup_07f4ed403cec08ca517f6db68456cd5c)
+        ;
+
+        
+    
+    
+            circle_marker_8471d4c1de2c4ddd611cfd0c9d6ad312.bindTooltip(
+                `<div>
+                     Goulash (BA2 3BG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f2a2e344bb80bf5d2ca365e3d8ea1500 = L.circleMarker(
+                [50.8135706, -0.3771568],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fafe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.526952221223162, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_a92a4e40806f30975b77f0ccd9bbb604 = L.popup({"maxWidth": 320});
+
+        
+            var html_e765c6636b4fd45b8040aa1ccb49d5a8 = $(`<div id="html_e765c6636b4fd45b8040aa1ccb49d5a8" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug & Lettuce Worthing L&T - Chapel Road</b><br>       Postcode: <b>BN11 1BJ</b><br>       Value: 121     </div>     </div>`)[0];
+            popup_a92a4e40806f30975b77f0ccd9bbb604.setContent(html_e765c6636b4fd45b8040aa1ccb49d5a8);
+        
+
+        circle_marker_f2a2e344bb80bf5d2ca365e3d8ea1500.bindPopup(popup_a92a4e40806f30975b77f0ccd9bbb604)
+        ;
+
+        
+    
+    
+            circle_marker_f2a2e344bb80bf5d2ca365e3d8ea1500.bindTooltip(
+                `<div>
+                     Slug & Lettuce Worthing L&T - Chapel Road (BN11 1BJ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6b4cf50c408651cd62058f8839534a33 = L.circleMarker(
+                [50.3705757, -4.154261],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.484833401163927, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_7de4d5d89580f9a5f581590df3001c22 = L.popup({"maxWidth": 320});
+
+        
+            var html_e5f0c5dd81df4f9e724fa3d3d56aa714 = $(`<div id="html_e5f0c5dd81df4f9e724fa3d3d56aa714" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Walkabout Plymouth</b><br>       Postcode: <b>PL1 2SU</b><br>       Value: 117     </div>     </div>`)[0];
+            popup_7de4d5d89580f9a5f581590df3001c22.setContent(html_e5f0c5dd81df4f9e724fa3d3d56aa714);
+        
+
+        circle_marker_6b4cf50c408651cd62058f8839534a33.bindPopup(popup_7de4d5d89580f9a5f581590df3001c22)
+        ;
+
+        
+    
+    
+            circle_marker_6b4cf50c408651cd62058f8839534a33.bindTooltip(
+                `<div>
+                     Walkabout Plymouth (PL1 2SU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8f7092c8cf2904e2f300f3f6286317a8 = L.circleMarker(
+                [53.2341072, -1.4461714],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fbfe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.353959545345999, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_3224dc61e4e81ede8a875876d4e3d720 = L.popup({"maxWidth": 320});
+
+        
+            var html_35f71a17ec98e77f7dee3e895dcfbc28 = $(`<div id="html_35f71a17ec98e77f7dee3e895dcfbc28" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Grill O'Clock - West Bars</b><br>       Postcode: <b>S40 1AG</b><br>       Value: 105     </div>     </div>`)[0];
+            popup_3224dc61e4e81ede8a875876d4e3d720.setContent(html_35f71a17ec98e77f7dee3e895dcfbc28);
+        
+
+        circle_marker_8f7092c8cf2904e2f300f3f6286317a8.bindPopup(popup_3224dc61e4e81ede8a875876d4e3d720)
+        ;
+
+        
+    
+    
+            circle_marker_8f7092c8cf2904e2f300f3f6286317a8.bindTooltip(
+                `<div>
+                     Grill O'Clock - West Bars (S40 1AG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_057faa5dc2f6d268c130c3e49c6e65fe = L.circleMarker(
+                [51.3686674, -0.168793],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcfe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.262508463523613, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_1de258b844ea6893f2c204b7b8e02853 = L.popup({"maxWidth": 320});
+
+        
+            var html_99d47729134a33a76e7b0d913b41dcc9 = $(`<div id="html_99d47729134a33a76e7b0d913b41dcc9" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Sakura</b><br>       Postcode: <b>SM5 3RG</b><br>       Value: 97     </div>     </div>`)[0];
+            popup_1de258b844ea6893f2c204b7b8e02853.setContent(html_99d47729134a33a76e7b0d913b41dcc9);
+        
+
+        circle_marker_057faa5dc2f6d268c130c3e49c6e65fe.bindPopup(popup_1de258b844ea6893f2c204b7b8e02853)
+        ;
+
+        
+    
+    
+            circle_marker_057faa5dc2f6d268c130c3e49c6e65fe.bindTooltip(
+                `<div>
+                     Sakura (SM5 3RG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f48b16ca53104db45fba366db3e095d7 = L.circleMarker(
+                [51.5529171, 0.207438],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcfe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.262508463523613, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_b807a0c73049e3f8502f48bfbad2fd10 = L.popup({"maxWidth": 320});
+
+        
+            var html_998e2eae3e98da03717b965bba814b9f = $(`<div id="html_998e2eae3e98da03717b965bba814b9f" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Sutton Arms Hornchurch</b><br>       Postcode: <b>RM12 6NJ</b><br>       Value: 97     </div>     </div>`)[0];
+            popup_b807a0c73049e3f8502f48bfbad2fd10.setContent(html_998e2eae3e98da03717b965bba814b9f);
+        
+
+        circle_marker_f48b16ca53104db45fba366db3e095d7.bindPopup(popup_b807a0c73049e3f8502f48bfbad2fd10)
+        ;
+
+        
+    
+    
+            circle_marker_f48b16ca53104db45fba366db3e095d7.bindTooltip(
+                `<div>
+                     Sutton Arms Hornchurch (RM12 6NJ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e500681b22b392263d62a8e4a2d9c391 = L.circleMarker(
+                [50.8352718, -0.1777197],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcfe68ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.179343061132783, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_25d4fdf0ef01c862f2d60bde0bf8327e = L.popup({"maxWidth": 320});
+
+        
+            var html_5a0053772d427efe7334504bb74391f8 = $(`<div id="html_5a0053772d427efe7334504bb74391f8" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Pizza Hot 4 U - Boundary Avenue</b><br>       Postcode: <b>BN3 4EF</b><br>       Value: 90     </div>     </div>`)[0];
+            popup_25d4fdf0ef01c862f2d60bde0bf8327e.setContent(html_5a0053772d427efe7334504bb74391f8);
+        
+
+        circle_marker_e500681b22b392263d62a8e4a2d9c391.bindPopup(popup_25d4fdf0ef01c862f2d60bde0bf8327e)
+        ;
+
+        
+    
+    
+            circle_marker_e500681b22b392263d62a8e4a2d9c391.bindTooltip(
+                `<div>
+                     Pizza Hot 4 U - Boundary Avenue (BN3 4EF)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_923ac48fb0d7c7037757830c76cc334d = L.circleMarker(
+                [54.0467054, -2.7994612],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.0418220568635395, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_70fc5e35c5c15b495aefb52761aa4243 = L.popup({"maxWidth": 320});
+
+        
+            var html_370254ebefba42430d9281ef60906bac = $(`<div id="html_370254ebefba42430d9281ef60906bac" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Pendle Witch Lancaster</b><br>       Postcode: <b>LA1 1XN</b><br>       Value: 79     </div>     </div>`)[0];
+            popup_70fc5e35c5c15b495aefb52761aa4243.setContent(html_370254ebefba42430d9281ef60906bac);
+        
+
+        circle_marker_923ac48fb0d7c7037757830c76cc334d.bindPopup(popup_70fc5e35c5c15b495aefb52761aa4243)
+        ;
+
+        
+    
+    
+            circle_marker_923ac48fb0d7c7037757830c76cc334d.bindTooltip(
+                `<div>
+                     Pendle Witch Lancaster (LA1 1XN)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6abb59b5b6da8e23fef6c22bb1b2e1fa = L.circleMarker(
+                [53.4746223, -2.0827362],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 6.002678066812255, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_70f4fdddcffdd245482ec0f006634eb8 = L.popup({"maxWidth": 320});
+
+        
+            var html_09cddc569676c97339ff0b20448aecf1 = $(`<div id="html_09cddc569676c97339ff0b20448aecf1" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Latte Da - Park Road Dukinfield</b><br>       Postcode: <b>SK16 5LX</b><br>       Value: 76     </div>     </div>`)[0];
+            popup_70f4fdddcffdd245482ec0f006634eb8.setContent(html_09cddc569676c97339ff0b20448aecf1);
+        
+
+        circle_marker_6abb59b5b6da8e23fef6c22bb1b2e1fa.bindPopup(popup_70f4fdddcffdd245482ec0f006634eb8)
+        ;
+
+        
+    
+    
+            circle_marker_6abb59b5b6da8e23fef6c22bb1b2e1fa.bindTooltip(
+                `<div>
+                     Latte Da - Park Road Dukinfield (SK16 5LX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d1486d0e8bc71a8f9cad9ae1708afa0e = L.circleMarker(
+                [51.4480982, 0.209464],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.989458925207975, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_a8eb61347a44c4f1cd55c60b8dcd3a57 = L.popup({"maxWidth": 320});
+
+        
+            var html_862232dc058abdc50f9c21dec539a02a = $(`<div id="html_862232dc058abdc50f9c21dec539a02a" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>JiJi Kitchen - Hythe Street</b><br>       Postcode: <b>DA1 1BX</b><br>       Value: 75     </div>     </div>`)[0];
+            popup_a8eb61347a44c4f1cd55c60b8dcd3a57.setContent(html_862232dc058abdc50f9c21dec539a02a);
+        
+
+        circle_marker_d1486d0e8bc71a8f9cad9ae1708afa0e.bindPopup(popup_a8eb61347a44c4f1cd55c60b8dcd3a57)
+        ;
+
+        
+    
+    
+            circle_marker_d1486d0e8bc71a8f9cad9ae1708afa0e.bindTooltip(
+                `<div>
+                     JiJi Kitchen - Hythe Street (DA1 1BX)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7e4d84d35fba6203c80286c037272c24 = L.circleMarker(
+                [50.9071878, -1.3973862],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.921999920417193, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_c7e17e8f98af2f925cf58c6c53957252 = L.popup({"maxWidth": 320});
+
+        
+            var html_98943b8d91f62562aadd6bcc85b58ef2 = $(`<div id="html_98943b8d91f62562aadd6bcc85b58ef2" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Southampton</b><br>       Postcode: <b>SO14 7FG</b><br>       Value: 70     </div>     </div>`)[0];
+            popup_c7e17e8f98af2f925cf58c6c53957252.setContent(html_98943b8d91f62562aadd6bcc85b58ef2);
+        
+
+        circle_marker_7e4d84d35fba6203c80286c037272c24.bindPopup(popup_c7e17e8f98af2f925cf58c6c53957252)
+        ;
+
+        
+    
+    
+            circle_marker_7e4d84d35fba6203c80286c037272c24.bindTooltip(
+                `<div>
+                     Slug And Lettuce Southampton (SO14 7FG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c62be279be07397e3ba9c87e2fd1f4a8 = L.circleMarker(
+                [53.5481623, -2.5154623],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.794193433349073, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_0e61980d2dded936b0de04f419d28c9f = L.popup({"maxWidth": 320});
+
+        
+            var html_9b5eb85ec5f162fde77eb494d7b361b8 = $(`<div id="html_9b5eb85ec5f162fde77eb494d7b361b8" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Fireaway Westhoughton - Market Street Westhoughton</b><br>       Postcode: <b>BL5 3AG</b><br>       Value: 61     </div>     </div>`)[0];
+            popup_0e61980d2dded936b0de04f419d28c9f.setContent(html_9b5eb85ec5f162fde77eb494d7b361b8);
+        
+
+        circle_marker_c62be279be07397e3ba9c87e2fd1f4a8.bindPopup(popup_0e61980d2dded936b0de04f419d28c9f)
+        ;
+
+        
+    
+    
+            circle_marker_c62be279be07397e3ba9c87e2fd1f4a8.bindTooltip(
+                `<div>
+                     Fireaway Westhoughton - Market Street Westhoughton (BL5 3AG)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_08e8a01fca3b1b9a8e5d5b2cc506f258 = L.circleMarker(
+                [52.9579006, -1.1725474],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.719088989920811, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_4f88fcbbc9fdb4fe37c73ff42433254c = L.popup({"maxWidth": 320});
+
+        
+            var html_eb2cfc68fe3f1a420a90acced17f952b = $(`<div id="html_eb2cfc68fe3f1a420a90acced17f952b" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Tasty Corner</b><br>       Postcode: <b>NG7 1HA</b><br>       Value: 56     </div>     </div>`)[0];
+            popup_4f88fcbbc9fdb4fe37c73ff42433254c.setContent(html_eb2cfc68fe3f1a420a90acced17f952b);
+        
+
+        circle_marker_08e8a01fca3b1b9a8e5d5b2cc506f258.bindPopup(popup_4f88fcbbc9fdb4fe37c73ff42433254c)
+        ;
+
+        
+    
+    
+            circle_marker_08e8a01fca3b1b9a8e5d5b2cc506f258.bindTooltip(
+                `<div>
+                     Tasty Corner (NG7 1HA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cc7deadee44354e413696fe54d96d4e9 = L.circleMarker(
+                [52.0404, -0.754928],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fdff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.688111876287992, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_65a313ed16d9d953132ce58bac5327ed = L.popup({"maxWidth": 320});
+
+        
+            var html_a6881dd28bdd317a28405c4677c53dc4 = $(`<div id="html_a6881dd28bdd317a28405c4677c53dc4" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug And Lettuce Mk The Hub</b><br>       Postcode: <b>MK9 2BQ</b><br>       Value: 54     </div>     </div>`)[0];
+            popup_65a313ed16d9d953132ce58bac5327ed.setContent(html_a6881dd28bdd317a28405c4677c53dc4);
+        
+
+        circle_marker_cc7deadee44354e413696fe54d96d4e9.bindPopup(popup_65a313ed16d9d953132ce58bac5327ed)
+        ;
+
+        
+    
+    
+            circle_marker_cc7deadee44354e413696fe54d96d4e9.bindTooltip(
+                `<div>
+                     Slug And Lettuce Mk The Hub (MK9 2BQ)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a705e2584739387aaf809c50c81effeb = L.circleMarker(
+                [51.4512045, -0.9696684],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feff67ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.452895374088522, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_4a0a27641c8af9c8bd34521a68c2363e = L.popup({"maxWidth": 320});
+
+        
+            var html_d97ca169ddb90e38f9ef25a4acf5f9bd = $(`<div id="html_d97ca169ddb90e38f9ef25a4acf5f9bd" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug and Lettuce Friar Street Reading</b><br>       Postcode: <b>RG1 1DB</b><br>       Value: 40     </div>     </div>`)[0];
+            popup_4a0a27641c8af9c8bd34521a68c2363e.setContent(html_d97ca169ddb90e38f9ef25a4acf5f9bd);
+        
+
+        circle_marker_a705e2584739387aaf809c50c81effeb.bindPopup(popup_4a0a27641c8af9c8bd34521a68c2363e)
+        ;
+
+        
+    
+    
+            circle_marker_a705e2584739387aaf809c50c81effeb.bindTooltip(
+                `<div>
+                     Slug and Lettuce Friar Street Reading (RG1 1DB)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b8b17764cbbd786ec19d15b67956b14 = L.circleMarker(
+                [53.8152768, -3.0470272],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#feff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.339503349320431, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_fb09cf903134b223e6f6b75250f075af = L.popup({"maxWidth": 320});
+
+        
+            var html_ae5376f12c6f5d46b4214308f4bfe6fe = $(`<div id="html_ae5376f12c6f5d46b4214308f4bfe6fe" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Slug & Lettuce Blackpool</b><br>       Postcode: <b>FY1 1PD</b><br>       Value: 34     </div>     </div>`)[0];
+            popup_fb09cf903134b223e6f6b75250f075af.setContent(html_ae5376f12c6f5d46b4214308f4bfe6fe);
+        
+
+        circle_marker_1b8b17764cbbd786ec19d15b67956b14.bindPopup(popup_fb09cf903134b223e6f6b75250f075af)
+        ;
+
+        
+    
+    
+            circle_marker_1b8b17764cbbd786ec19d15b67956b14.bindTooltip(
+                `<div>
+                     Slug & Lettuce Blackpool (FY1 1PD)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dd5305c582be64bf9299e26cdab3696a = L.circleMarker(
+                [51.3436099, 0.735349],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.237095833731031, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_ba301c06cfacf767a7120d0e5c2c2449 = L.popup({"maxWidth": 320});
+
+        
+            var html_c2c76bf8a8d896905936c876e69be1f7 = $(`<div id="html_c2c76bf8a8d896905936c876e69be1f7" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Beauty of Bath - College Road</b><br>       Postcode: <b>ME10 1LH</b><br>       Value: 29     </div>     </div>`)[0];
+            popup_ba301c06cfacf767a7120d0e5c2c2449.setContent(html_c2c76bf8a8d896905936c876e69be1f7);
+        
+
+        circle_marker_dd5305c582be64bf9299e26cdab3696a.bindPopup(popup_ba301c06cfacf767a7120d0e5c2c2449)
+        ;
+
+        
+    
+    
+            circle_marker_dd5305c582be64bf9299e26cdab3696a.bindTooltip(
+                `<div>
+                     Beauty of Bath - College Road (ME10 1LH)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0bb76c38b197508d63fd47d51283fc24 = L.circleMarker(
+                [53.1022937, -1.3722605],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.17136169872123, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_94418b85d665b5e765f1ff3041487e33 = L.popup({"maxWidth": 320});
+
+        
+            var html_84b942e2d252c6fd7f78b9198cd8b015 = $(`<div id="html_84b942e2d252c6fd7f78b9198cd8b015" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Dixy Chicken (Alfreton) - High Street Alfreton</b><br>       Postcode: <b>DE55 7DP</b><br>       Value: 26     </div>     </div>`)[0];
+            popup_94418b85d665b5e765f1ff3041487e33.setContent(html_84b942e2d252c6fd7f78b9198cd8b015);
+        
+
+        circle_marker_0bb76c38b197508d63fd47d51283fc24.bindPopup(popup_94418b85d665b5e765f1ff3041487e33)
+        ;
+
+        
+    
+    
+            circle_marker_0bb76c38b197508d63fd47d51283fc24.bindTooltip(
+                `<div>
+                     Dixy Chicken (Alfreton) - High Street Alfreton (DE55 7DP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b72d08c8cd1b9fb8cacf990e181e3c29 = L.circleMarker(
+                [53.9999818, -1.5353201],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.148614646010528, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_aafae95c616cb6056dda5e023c2f2131 = L.popup({"maxWidth": 320});
+
+        
+            var html_eb24b8c4ce5001ff44be238bcf6e9c4e = $(`<div id="html_eb24b8c4ce5001ff44be238bcf6e9c4e" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Harrogate Arms Harrogate</b><br>       Postcode: <b>HG1 2QU</b><br>       Value: 25     </div>     </div>`)[0];
+            popup_aafae95c616cb6056dda5e023c2f2131.setContent(html_eb24b8c4ce5001ff44be238bcf6e9c4e);
+        
+
+        circle_marker_b72d08c8cd1b9fb8cacf990e181e3c29.bindPopup(popup_aafae95c616cb6056dda5e023c2f2131)
+        ;
+
+        
+    
+    
+            circle_marker_b72d08c8cd1b9fb8cacf990e181e3c29.bindTooltip(
+                `<div>
+                     Harrogate Arms Harrogate (HG1 2QU)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_454ec7f9877ec595b2f4ba14d153ea03 = L.circleMarker(
+                [53.5462411, -2.4015686],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.077496047522358, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_cfa3373bef41b26f8e5668f241dab81b = L.popup({"maxWidth": 320});
+
+        
+            var html_eb215d60551c4c9cf8750e045742db47 = $(`<div id="html_eb215d60551c4c9cf8750e045742db47" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Flavour Burstz</b><br>       Postcode: <b>BL4 0BR</b><br>       Value: 22     </div>     </div>`)[0];
+            popup_cfa3373bef41b26f8e5668f241dab81b.setContent(html_eb215d60551c4c9cf8750e045742db47);
+        
+
+        circle_marker_454ec7f9877ec595b2f4ba14d153ea03.bindPopup(popup_cfa3373bef41b26f8e5668f241dab81b)
+        ;
+
+        
+    
+    
+            circle_marker_454ec7f9877ec595b2f4ba14d153ea03.bindTooltip(
+                `<div>
+                     Flavour Burstz (BL4 0BR)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bc011a06e19292cf77f55fbdef91c45f = L.circleMarker(
+                [51.6218323, -0.0057248],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.052722711935631, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_989641e3a865d2b27a1e0e34f361c4c8 = L.popup({"maxWidth": 320});
+
+        
+            var html_55f0c793253991490a38e355170a5c9d = $(`<div id="html_55f0c793253991490a38e355170a5c9d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Kings Head Chingford</b><br>       Postcode: <b>E4 7EA</b><br>       Value: 21     </div>     </div>`)[0];
+            popup_989641e3a865d2b27a1e0e34f361c4c8.setContent(html_55f0c793253991490a38e355170a5c9d);
+        
+
+        circle_marker_bc011a06e19292cf77f55fbdef91c45f.bindPopup(popup_989641e3a865d2b27a1e0e34f361c4c8)
+        ;
+
+        
+    
+    
+            circle_marker_bc011a06e19292cf77f55fbdef91c45f.bindTooltip(
+                `<div>
+                     Kings Head Chingford (E4 7EA)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9ed6f8facf10ada805c761381f755477 = L.circleMarker(
+                [53.2609265, -0.5924173],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 5.027352171372559, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_8287eabd3ce2abd41bc8733b83d8bd8c = L.popup({"maxWidth": 320});
+
+        
+            var html_fe28a5f0202c85c71c8a6f58b05609ae = $(`<div id="html_fe28a5f0202c85c71c8a6f58b05609ae" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Snacc - Newland</b><br>       Postcode: <b>LN1 1XP</b><br>       Value: 20     </div>     </div>`)[0];
+            popup_8287eabd3ce2abd41bc8733b83d8bd8c.setContent(html_fe28a5f0202c85c71c8a6f58b05609ae);
+        
+
+        circle_marker_9ed6f8facf10ada805c761381f755477.bindPopup(popup_8287eabd3ce2abd41bc8733b83d8bd8c)
+        ;
+
+        
+    
+    
+            circle_marker_9ed6f8facf10ada805c761381f755477.bindTooltip(
+                `<div>
+                     Snacc - Newland (LN1 1XP)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5268bb51c0e6e7b19bbc00f4406bd634 = L.circleMarker(
+                [51.8932427, -0.3944578],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4.828277800387975, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_9af53e1cf89dc4f7d928d2954ddc7478 = L.popup({"maxWidth": 320});
+
+        
+            var html_f21cbf193a2feed344ea744cca04d497 = $(`<div id="html_f21cbf193a2feed344ea744cca04d497" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Grill Station Peri Peri - Midland Road</b><br>       Postcode: <b>LU2 0HS</b><br>       Value: 13     </div>     </div>`)[0];
+            popup_9af53e1cf89dc4f7d928d2954ddc7478.setContent(html_f21cbf193a2feed344ea744cca04d497);
+        
+
+        circle_marker_5268bb51c0e6e7b19bbc00f4406bd634.bindPopup(popup_9af53e1cf89dc4f7d928d2954ddc7478)
+        ;
+
+        
+    
+    
+            circle_marker_5268bb51c0e6e7b19bbc00f4406bd634.bindTooltip(
+                `<div>
+                     Grill Station Peri Peri - Midland Road (LU2 0HS)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1e0131cb14376b6bbb20912a5bc69ebd = L.circleMarker(
+                [53.4909653, -3.023793],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4.649754564131384, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_c9d752c100daabffc4b310f237899cb7 = L.popup({"maxWidth": 320});
+
+        
+            var html_0fbf970aa6d8ba72c146ae6c0220faa4 = $(`<div id="html_0fbf970aa6d8ba72c146ae6c0220faa4" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>The George Crosby</b><br>       Postcode: <b>L23 2SE</b><br>       Value: 8     </div>     </div>`)[0];
+            popup_c9d752c100daabffc4b310f237899cb7.setContent(html_0fbf970aa6d8ba72c146ae6c0220faa4);
+        
+
+        circle_marker_1e0131cb14376b6bbb20912a5bc69ebd.bindPopup(popup_c9d752c100daabffc4b310f237899cb7)
+        ;
+
+        
+    
+    
+            circle_marker_1e0131cb14376b6bbb20912a5bc69ebd.bindTooltip(
+                `<div>
+                     The George Crosby (L23 2SE)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_412d50d3147f8db7b9b74b0a142d58c0 = L.circleMarker(
+                [52.2928622, -0.5977197],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4.607789741118069, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_846b961e7a9976e13e9d8e4f56b2ef70 = L.popup({"maxWidth": 320});
+
+        
+            var html_957555d65928219c47dea0ce32e4167d = $(`<div id="html_957555d65928219c47dea0ce32e4167d" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Rose and Crown Rushden - High St, Northampton</b><br>       Postcode: <b>NN10 0QE</b><br>       Value: 7     </div>     </div>`)[0];
+            popup_846b961e7a9976e13e9d8e4f56b2ef70.setContent(html_957555d65928219c47dea0ce32e4167d);
+        
+
+        circle_marker_412d50d3147f8db7b9b74b0a142d58c0.bindPopup(popup_846b961e7a9976e13e9d8e4f56b2ef70)
+        ;
+
+        
+    
+    
+            circle_marker_412d50d3147f8db7b9b74b0a142d58c0.bindTooltip(
+                `<div>
+                     Rose and Crown Rushden - High St, Northampton (NN10 0QE)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_35ee3ba61d7f75116096bcfc67f1fdd4 = L.circleMarker(
+                [51.6875078, -3.8007881],
+                {"bubblingMouseEvents": true, "color": "#0a0a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffff66ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 4.607789741118069, "stroke": true, "weight": 0.7}
+            ).addTo(feature_group_92bd0b6f25f5fbb86b8e971b29631ea5);
+        
+    
+        var popup_5d683bc8a1a8066e8b3413ddc5336c67 = L.popup({"maxWidth": 320});
+
+        
+            var html_6293ecfad6502e34b70ade2555e7bbeb = $(`<div id="html_6293ecfad6502e34b70ade2555e7bbeb" style="width: 100.0%; height: 100.0%;">     <div style="font-size: 13px;">       <b>Express Pizza & Kebab - New Road Skewen</b><br>       Postcode: <b>SA10 6HL</b><br>       Value: 7     </div>     </div>`)[0];
+            popup_5d683bc8a1a8066e8b3413ddc5336c67.setContent(html_6293ecfad6502e34b70ade2555e7bbeb);
+        
+
+        circle_marker_35ee3ba61d7f75116096bcfc67f1fdd4.bindPopup(popup_5d683bc8a1a8066e8b3413ddc5336c67)
+        ;
+
+        
+    
+    
+            circle_marker_35ee3ba61d7f75116096bcfc67f1fdd4.bindTooltip(
+                `<div>
+                     Express Pizza & Kebab - New Road Skewen (SA10 6HL)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+    var color_map_95756f4ff3f3ad34b1832f6b15b751ae = {};
+
+    
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.color = d3.scale.threshold()
+              .domain([7.0, 16.70741482965932, 26.414829659318638, 36.122244488977955, 45.829659318637276, 55.53707414829659, 65.24448897795591, 74.95190380761522, 84.65931863727455, 94.36673346693387, 104.07414829659318, 113.78156312625251, 123.48897795591182, 133.19639278557116, 142.90380761523045, 152.6112224448898, 162.3186372745491, 172.02605210420842, 181.73346693386773, 191.44088176352705, 201.14829659318636, 210.8557114228457, 220.56312625250501, 230.27054108216433, 239.97795591182364, 249.68537074148296, 259.3927855711423, 269.1002004008016, 278.8076152304609, 288.51503006012024, 298.2224448897796, 307.92985971943887, 317.6372745490982, 327.3446893787575, 337.05210420841684, 346.7595190380762, 356.46693386773546, 366.1743486973948, 375.8817635270541, 385.58917835671343, 395.2965931863727, 405.00400801603206, 414.7114228456914, 424.4188376753507, 434.12625250501003, 443.8336673346693, 453.54108216432866, 463.248496993988, 472.9559118236473, 482.6633266533066, 492.3707414829659, 502.07815631262525, 511.7855711422846, 521.4929859719439, 531.2004008016032, 540.9078156312626, 550.6152304609218, 560.3226452905811, 570.0300601202405, 579.7374749498998, 589.4448897795592, 599.1523046092184, 608.8597194388777, 618.5671342685371, 628.2745490981964, 637.9819639278558, 647.689378757515, 657.3967935871743, 667.1042084168337, 676.811623246493, 686.5190380761524, 696.2264529058116, 705.9338677354709, 715.6412825651303, 725.3486973947896, 735.056112224449, 744.7635270541082, 754.4709418837675, 764.1783567134269, 773.8857715430862, 783.5931863727454, 793.3006012024048, 803.0080160320641, 812.7154308617235, 822.4228456913828, 832.130260521042, 841.8376753507014, 851.5450901803607, 861.2525050100201, 870.9599198396794, 880.6673346693386, 890.374749498998, 900.0821643286573, 909.7895791583167, 919.496993987976, 929.2044088176352, 938.9118236472946, 948.6192384769539, 958.3266533066133, 968.0340681362726, 977.7414829659318, 987.4488977955912, 997.1563126252505, 1006.8637274549098, 1016.5711422845692, 1026.2785571142285, 1035.9859719438878, 1045.693386773547, 1055.4008016032064, 1065.1082164328657, 1074.8156312625251, 1084.5230460921844, 1094.2304609218436, 1103.937875751503, 1113.6452905811623, 1123.3527054108217, 1133.060120240481, 1142.7675350701402, 1152.4749498997996, 1162.1823647294589, 1171.8897795591183, 1181.5971943887776, 1191.3046092184368, 1201.0120240480962, 1210.7194388777555, 1220.426853707415, 1230.1342685370741, 1239.8416833667334, 1249.5490981963928, 1259.256513026052, 1268.9639278557115, 1278.6713426853707, 1288.37875751503, 1298.0861723446894, 1307.7935871743487, 1317.5010020040081, 1327.2084168336673, 1336.9158316633266, 1346.623246492986, 1356.3306613226453, 1366.0380761523047, 1375.745490981964, 1385.4529058116232, 1395.1603206412826, 1404.8677354709419, 1414.5751503006013, 1424.2825651302605, 1433.9899799599198, 1443.6973947895792, 1453.4048096192384, 1463.112224448898, 1472.8196392785571, 1482.5270541082164, 1492.2344689378758, 1501.941883767535, 1511.6492985971945, 1521.3567134268537, 1531.064128256513, 1540.7715430861724, 1550.4789579158316, 1560.1863727454909, 1569.8937875751503, 1579.6012024048096, 1589.308617234469, 1599.0160320641282, 1608.7234468937875, 1618.430861723447, 1628.1382765531062, 1637.8456913827656, 1647.5531062124248, 1657.260521042084, 1666.9679358717435, 1676.6753507014027, 1686.3827655310622, 1696.0901803607214, 1705.7975951903807, 1715.5050100200401, 1725.2124248496993, 1734.9198396793588, 1744.627254509018, 1754.3346693386773, 1764.0420841683367, 1773.749498997996, 1783.4569138276554, 1793.1643286573146, 1802.8717434869739, 1812.5791583166333, 1822.2865731462925, 1831.993987975952, 1841.7014028056112, 1851.4088176352705, 1861.11623246493, 1870.8236472945891, 1880.5310621242486, 1890.2384769539078, 1899.945891783567, 1909.6533066132265, 1919.3607214428857, 1929.0681362725452, 1938.7755511022044, 1948.4829659318636, 1958.190380761523, 1967.8977955911823, 1977.6052104208418, 1987.312625250501, 1997.0200400801602, 2006.7274549098197, 2016.434869739479, 2026.1422845691384, 2035.8496993987976, 2045.5571142284568, 2055.2645290581163, 2064.9719438877755, 2074.6793587174348, 2084.386773547094, 2094.0941883767537, 2103.801603206413, 2113.509018036072, 2123.2164328657313, 2132.9238476953906, 2142.6312625250503, 2152.3386773547095, 2162.0460921843687, 2171.753507014028, 2181.460921843687, 2191.168336673347, 2200.875751503006, 2210.5831663326653, 2220.2905811623245, 2229.9979959919838, 2239.7054108216435, 2249.4128256513027, 2259.120240480962, 2268.827655310621, 2278.5350701402804, 2288.24248496994, 2297.9498997995993, 2307.6573146292585, 2317.3647294589177, 2327.072144288577, 2336.7795591182366, 2346.486973947896, 2356.194388777555, 2365.9018036072143, 2375.6092184368736, 2385.3166332665332, 2395.0240480961925, 2404.7314629258517, 2414.438877755511, 2424.14629258517, 2433.85370741483, 2443.561122244489, 2453.2685370741483, 2462.9759519038075, 2472.6833667334668, 2482.3907815631264, 2492.0981963927857, 2501.805611222445, 2511.513026052104, 2521.2204408817634, 2530.927855711423, 2540.6352705410823, 2550.3426853707415, 2560.0501002004007, 2569.75751503006, 2579.4649298597196, 2589.172344689379, 2598.879759519038, 2608.5871743486973, 2618.2945891783565, 2628.0020040080162, 2637.7094188376755, 2647.4168336673347, 2657.124248496994, 2666.831663326653, 2676.539078156313, 2686.246492985972, 2695.9539078156313, 2705.6613226452905, 2715.3687374749497, 2725.0761523046094, 2734.7835671342687, 2744.490981963928, 2754.198396793587, 2763.9058116232463, 2773.613226452906, 2783.3206412825652, 2793.0280561122245, 2802.7354709418837, 2812.442885771543, 2822.1503006012026, 2831.857715430862, 2841.565130260521, 2851.2725450901803, 2860.9799599198395, 2870.687374749499, 2880.3947895791584, 2890.1022044088177, 2899.809619238477, 2909.517034068136, 2919.224448897796, 2928.931863727455, 2938.6392785571143, 2948.3466933867735, 2958.0541082164327, 2967.7615230460924, 2977.4689378757516, 2987.176352705411, 2996.88376753507, 3006.5911823647293, 3016.298597194389, 3026.0060120240482, 3035.7134268537075, 3045.4208416833667, 3055.128256513026, 3064.835671342685, 3074.543086172345, 3084.250501002004, 3093.9579158316633, 3103.6653306613225, 3113.3727454909817, 3123.0801603206414, 3132.7875751503007, 3142.49498997996, 3152.202404809619, 3161.9098196392783, 3171.617234468938, 3181.3246492985973, 3191.0320641282565, 3200.7394789579157, 3210.446893787575, 3220.1543086172346, 3229.861723446894, 3239.569138276553, 3249.2765531062123, 3258.9839679358715, 3268.691382765531, 3278.3987975951904, 3288.1062124248497, 3297.813627254509, 3307.521042084168, 3317.228456913828, 3326.935871743487, 3336.6432865731463, 3346.3507014028055, 3356.0581162324647, 3365.7655310621244, 3375.4729458917836, 3385.180360721443, 3394.887775551102, 3404.5951903807613, 3414.302605210421, 3424.0100200400802, 3433.7174348697395, 3443.4248496993987, 3453.132264529058, 3462.8396793587176, 3472.547094188377, 3482.254509018036, 3491.9619238476953, 3501.6693386773545, 3511.376753507014, 3521.0841683366734, 3530.7915831663327, 3540.498997995992, 3550.206412825651, 3559.913827655311, 3569.62124248497, 3579.3286573146293, 3589.0360721442885, 3598.7434869739477, 3608.4509018036074, 3618.1583166332666, 3627.865731462926, 3637.573146292585, 3647.2805611222443, 3656.987975951904, 3666.695390781563, 3676.4028056112224, 3686.1102204408817, 3695.817635270541, 3705.5250501002006, 3715.23246492986, 3724.939879759519, 3734.6472945891783, 3744.3547094188375, 3754.062124248497, 3763.7695390781564, 3773.4769539078156, 3783.184368737475, 3792.891783567134, 3802.599198396794, 3812.306613226453, 3822.0140280561122, 3831.7214428857715, 3841.4288577154307, 3851.1362725450904, 3860.8436873747496, 3870.551102204409, 3880.258517034068, 3889.9659318637273, 3899.673346693387, 3909.380761523046, 3919.0881763527054, 3928.7955911823647, 3938.503006012024, 3948.2104208416836, 3957.917835671343, 3967.625250501002, 3977.3326653306613, 3987.0400801603205, 3996.74749498998, 4006.4549098196394, 4016.1623246492986, 4025.869739478958, 4035.577154308617, 4045.2845691382768, 4054.991983967936, 4064.699398797595, 4074.4068136272545, 4084.1142284569137, 4093.8216432865734, 4103.529058116233, 4113.236472945891, 4122.943887775551, 4132.651302605211, 4142.3587174348695, 4152.066132264529, 4161.773547094188, 4171.480961923848, 4181.188376753507, 4190.895791583166, 4200.603206412826, 4210.310621242485, 4220.018036072144, 4229.725450901804, 4239.432865731463, 4249.140280561122, 4258.847695390781, 4268.555110220441, 4278.2625250501005, 4287.969939879759, 4297.677354709419, 4307.384769539078, 4317.092184368737, 4326.799599198397, 4336.507014028056, 4346.214428857716, 4355.921843687374, 4365.629258517034, 4375.336673346694, 4385.0440881763525, 4394.751503006012, 4404.458917835671, 4414.166332665331, 4423.87374749499, 4433.581162324649, 4443.288577154309, 4452.9959919839675, 4462.703406813627, 4472.410821643287, 4482.118236472946, 4491.825651302605, 4501.533066132264, 4511.240480961924, 4520.9478957915835, 4530.655310621242, 4540.362725450902, 4550.070140280561, 4559.77755511022, 4569.48496993988, 4579.192384769539, 4588.899799599199, 4598.607214428857, 4608.314629258517, 4618.022044088177, 4627.7294589178355, 4637.436873747495, 4647.144288577154, 4656.851703406814, 4666.559118236473, 4676.266533066132, 4685.973947895792, 4695.6813627254505, 4705.38877755511, 4715.09619238477, 4724.803607214429, 4734.511022044088, 4744.218436873747, 4753.925851703407, 4763.6332665330665, 4773.340681362725, 4783.048096192385, 4792.755511022044, 4802.462925851703, 4812.170340681363, 4821.877755511022, 4831.5851703406815, 4841.29258517034, 4851.0])
+              .range(['#ffff66ff', '#ffff66ff', '#ffff66ff', '#feff66ff', '#feff67ff', '#fdff67ff', '#fdff67ff', '#fdff67ff', '#fcfe67ff', '#fcfe68ff', '#fbfe68ff', '#fbfe68ff', '#fafe68ff', '#fafe68ff', '#fafe69ff', '#f9fe69ff', '#f9fd69ff', '#f8fd69ff', '#f8fd69ff', '#f7fd6aff', '#f7fd6aff', '#f7fd6aff', '#f6fd6aff', '#f6fc6aff', '#f5fc6bff', '#f5fc6bff', '#f4fc6bff', '#f4fc6bff', '#f4fc6bff', '#f3fc6cff', '#f3fc6cff', '#f2fb6cff', '#f2fb6cff', '#f1fb6cff', '#f1fb6cff', '#f1fb6dff', '#f0fb6dff', '#f0fb6dff', '#effa6dff', '#effa6dff', '#eefa6eff', '#eefa6eff', '#eefa6eff', '#edfa6eff', '#edfa6eff', '#ecfa6fff', '#ecf96fff', '#ebf96fff', '#ebf96fff', '#ebf96fff', '#eaf970ff', '#eaf970ff', '#e9f970ff', '#e9f870ff', '#e8f870ff', '#e8f871ff', '#e8f871ff', '#e7f871ff', '#e7f871ff', '#e6f871ff', '#e6f871ff', '#e5f772ff', '#e5f772ff', '#e5f772ff', '#e4f772ff', '#e4f772ff', '#e3f773ff', '#e3f773ff', '#e2f673ff', '#e2f673ff', '#e2f673ff', '#e1f674ff', '#e1f674ff', '#e0f674ff', '#e0f674ff', '#dff674ff', '#dff575ff', '#dff575ff', '#def575ff', '#def575ff', '#ddf575ff', '#ddf576ff', '#dcf576ff', '#dcf476ff', '#dcf476ff', '#dbf476ff', '#dbf477ff', '#daf477ff', '#daf477ff', '#d9f477ff', '#d9f477ff', '#d9f377ff', '#d8f378ff', '#d8f378ff', '#d7f378ff', '#d7f378ff', '#d6f378ff', '#d6f379ff', '#d6f279ff', '#d5f279ff', '#d5f279ff', '#d4f279ff', '#d4f27aff', '#d3f27aff', '#d3f27aff', '#d3f27aff', '#d2f17aff', '#d2f17bff', '#d1f17bff', '#d1f17bff', '#d0f17bff', '#d0f17bff', '#d0f17cff', '#cff07cff', '#cff07cff', '#cef07cff', '#cef07cff', '#cdf07cff', '#cdf07dff', '#cdf07dff', '#ccf07dff', '#ccef7dff', '#cbef7dff', '#cbef7eff', '#caef7eff', '#caef7eff', '#caef7eff', '#c9ef7eff', '#c9ef7fff', '#c8ee7fff', '#c8ee7fff', '#c7ee7fff', '#c7ee7fff', '#c7ee80ff', '#c6ee80ff', '#c6ee80ff', '#c5ed80ff', '#c5ed80ff', '#c4ed81ff', '#c4ed81ff', '#c4ed81ff', '#c3ed81ff', '#c3ed81ff', '#c2ed82ff', '#c2ec82ff', '#c1ec82ff', '#c1ec82ff', '#c1ec82ff', '#c0ec82ff', '#c0ec83ff', '#bfec83ff', '#bfeb83ff', '#beeb83ff', '#beeb83ff', '#beeb84ff', '#bdeb84ff', '#bdeb84ff', '#bceb84ff', '#bceb84ff', '#bbea85ff', '#bbea85ff', '#bbea85ff', '#baea85ff', '#baea85ff', '#b9ea86ff', '#b9ea86ff', '#b8e986ff', '#b8e986ff', '#b7e986ff', '#b7e985ff', '#b6e885ff', '#b6e885ff', '#b5e885ff', '#b5e784ff', '#b4e784ff', '#b3e784ff', '#b3e784ff', '#b2e683ff', '#b2e683ff', '#b1e683ff', '#b1e583ff', '#b0e582ff', '#b0e582ff', '#afe482ff', '#aee482ff', '#aee481ff', '#ade481ff', '#ade381ff', '#ace381ff', '#ace380ff', '#abe280ff', '#abe280ff', '#aae280ff', '#a9e27fff', '#a9e17fff', '#a8e17fff', '#a8e17fff', '#a7e07eff', '#a7e07eff', '#a6e07eff', '#a6df7dff', '#a5df7dff', '#a4df7dff', '#a4df7dff', '#a3de7cff', '#a3de7cff', '#a2de7cff', '#a2dd7cff', '#a1dd7bff', '#a1dd7bff', '#a0dc7bff', '#9fdc7bff', '#9fdc7aff', '#9edc7aff', '#9edb7aff', '#9ddb7aff', '#9ddb79ff', '#9cda79ff', '#9cda79ff', '#9bda79ff', '#9ada78ff', '#9ad978ff', '#99d978ff', '#99d978ff', '#98d877ff', '#98d877ff', '#97d877ff', '#97d777ff', '#96d776ff', '#95d776ff', '#95d776ff', '#94d676ff', '#94d675ff', '#93d675ff', '#93d575ff', '#92d575ff', '#92d574ff', '#91d574ff', '#90d474ff', '#90d474ff', '#8fd473ff', '#8fd373ff', '#8ed373ff', '#8ed373ff', '#8dd272ff', '#8dd272ff', '#8cd272ff', '#8bd272ff', '#8bd171ff', '#8ad171ff', '#8ad171ff', '#89d071ff', '#89d070ff', '#88d070ff', '#88cf70ff', '#87cf70ff', '#86cf6fff', '#86cf6fff', '#85ce6fff', '#85ce6fff', '#84ce6eff', '#84cd6eff', '#83cd6eff', '#83cd6eff', '#82cd6dff', '#81cc6dff', '#81cc6dff', '#80cc6dff', '#80cb6cff', '#7fcb6cff', '#7fcb6cff', '#7eca6bff', '#7eca6bff', '#7dca6bff', '#7cca6bff', '#7cc96aff', '#7bc96aff', '#7bc96aff', '#7ac86aff', '#7ac869ff', '#79c869ff', '#79c869ff', '#78c769ff', '#77c768ff', '#77c768ff', '#76c668ff', '#76c668ff', '#75c667ff', '#75c567ff', '#74c567ff', '#74c567ff', '#73c566ff', '#72c466ff', '#72c466ff', '#71c466ff', '#71c365ff', '#70c365ff', '#70c365ff', '#6fc265ff', '#6fc264ff', '#6ec264ff', '#6dc264ff', '#6dc164ff', '#6cc163ff', '#6cc163ff', '#6bc063ff', '#6bc063ff', '#6ac062ff', '#6ac062ff', '#69bf62ff', '#68bf62ff', '#68bf61ff', '#67be61ff', '#67be61ff', '#66be61ff', '#66bd60ff', '#65bd60ff', '#65bd60ff', '#64bd60ff', '#63bc5fff', '#63bc5fff', '#62bc5fff', '#62bb5fff', '#61bb5eff', '#61bb5eff', '#60ba5eff', '#60ba5eff', '#5fba5dff', '#5eba5dff', '#5eb95dff', '#5db95dff', '#5db95cff', '#5cb85cff', '#5cb85cff', '#5bb75bff', '#5bb75bff', '#5ab65bff', '#5ab65aff', '#59b55aff', '#59b559ff', '#58b459ff', '#58b459ff', '#57b358ff', '#57b358ff', '#56b258ff', '#56b157ff', '#55b157ff', '#55b056ff', '#54b056ff', '#54af56ff', '#53af55ff', '#53ae55ff', '#52ae55ff', '#52ad54ff', '#51ad54ff', '#51ac54ff', '#50ab53ff', '#50ab53ff', '#4faa52ff', '#4faa52ff', '#4ea952ff', '#4ea951ff', '#4ea851ff', '#4da851ff', '#4da750ff', '#4ca650ff', '#4ca64fff', '#4ba54fff', '#4ba54fff', '#4aa44eff', '#4aa44eff', '#49a34eff', '#49a34dff', '#48a24dff', '#48a24cff', '#47a14cff', '#47a04cff', '#46a04bff', '#469f4bff', '#459f4bff', '#459e4aff', '#449e4aff', '#449d49ff', '#439d49ff', '#439c49ff', '#429b48ff', '#429b48ff', '#419a48ff', '#419a47ff', '#409947ff', '#409946ff', '#3f9846ff', '#3f9846ff', '#3e9745ff', '#3e9745ff', '#3d9645ff', '#3d9544ff', '#3c9544ff', '#3c9443ff', '#3b9443ff', '#3b9343ff', '#3a9342ff', '#3a9242ff', '#399242ff', '#399141ff', '#389041ff', '#389040ff', '#388f40ff', '#378f40ff', '#378e3fff', '#368e3fff', '#368d3fff', '#358d3eff', '#358c3eff', '#348c3dff', '#348b3dff', '#338a3dff', '#338a3cff', '#32893cff', '#32893cff', '#31883bff', '#31883bff', '#30873aff', '#30873aff', '#2f863aff', '#2f8639ff', '#2e8539ff', '#2e8439ff', '#2d8438ff', '#2d8338ff', '#2c8337ff', '#2c8237ff', '#2b8237ff', '#2b8136ff', '#2a8136ff', '#2a8036ff', '#297f35ff', '#297f35ff', '#287e34ff', '#287e34ff', '#277d34ff', '#277d33ff', '#267c33ff', '#267c33ff', '#257b32ff', '#257b32ff', '#247a31ff', '#247931ff', '#237931ff', '#237830ff', '#227830ff', '#227730ff', '#22772fff', '#21762fff', '#21762eff', '#20752eff', '#20742eff', '#1f742dff', '#1f732dff', '#1e732dff', '#1e722cff', '#1d722cff', '#1d712bff', '#1c712bff', '#1c702bff', '#1b702aff', '#1b6f2aff', '#1a6e2aff', '#1a6e29ff', '#196d29ff', '#196d28ff', '#186c28ff', '#186c28ff', '#176b27ff', '#176b27ff', '#166a27ff', '#166926ff', '#156926ff', '#156825ff', '#146825ff', '#146725ff', '#136724ff', '#136624ff', '#126624ff', '#126523ff', '#116523ff', '#116422ff', '#106322ff', '#106322ff', '#0f6221ff', '#0f6221ff', '#0e6121ff', '#0e6120ff', '#0d6020ff', '#0d601fff', '#0c5f1fff', '#0c5f1fff', '#0c5e1eff', '#0b5d1eff', '#0b5d1eff']);
+    
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.x = d3.scale.linear()
+              .domain([7.0, 4851.0])
+              .range([0, 450 - 50]);
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.legend = L.control({position: 'topright'});
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.legend.addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.xAxis = d3.svg.axis()
+        .scale(color_map_95756f4ff3f3ad34b1832f6b15b751ae.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([7.0, 1621.6666666666667, 3236.3333333333335, 4851.0]);
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.g = color_map_95756f4ff3f3ad34b1832f6b15b751ae.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.g.selectAll("rect")
+        .data(color_map_95756f4ff3f3ad34b1832f6b15b751ae.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_95756f4ff3f3ad34b1832f6b15b751ae.x(color_map_95756f4ff3f3ad34b1832f6b15b751ae.color.domain()[i - 1]) : color_map_95756f4ff3f3ad34b1832f6b15b751ae.x.range()[0],
+            x1: i < color_map_95756f4ff3f3ad34b1832f6b15b751ae.color.domain().length ? color_map_95756f4ff3f3ad34b1832f6b15b751ae.x(color_map_95756f4ff3f3ad34b1832f6b15b751ae.color.domain()[i]) : color_map_95756f4ff3f3ad34b1832f6b15b751ae.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_95756f4ff3f3ad34b1832f6b15b751ae.g.call(color_map_95756f4ff3f3ad34b1832f6b15b751ae.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Value (smaller \u2192 larger)");
+    
+            var layer_control_f922ab7e293e81dccf8d5d33b33bddaa = {
+                base_layers : {
+                    "OpenStreetMap (reliable)" : tile_layer_4f8b8e403cd15288dc3623411f74f275,
+                    "Carto Positron (light)" : tile_layer_95d316a4179a41004a8be0f2fbe1939d,
+                    "Carto Voyager" : tile_layer_8d1327aa7e96bf57b15105fdaaa5081b,
+                    "Esri World Topo" : tile_layer_4073c8b80a027b537650f0f37eec1baf,
+                },
+                overlays :  {
+                    "Value circles (click for details)" : feature_group_92bd0b6f25f5fbb86b8e971b29631ea5,
+                },
+            };
+            L.control.layers(
+                layer_control_f922ab7e293e81dccf8d5d33b33bddaa.base_layers,
+                layer_control_f922ab7e293e81dccf8d5d33b33bddaa.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_5b094bb07209f6174d4fed371d9cbd0c);
+            tile_layer_95d316a4179a41004a8be0f2fbe1939d.remove();
+            tile_layer_8d1327aa7e96bf57b15105fdaaa5081b.remove();
+            tile_layer_4073c8b80a027b537650f0f37eec1baf.remove();
+        
+</script>
+</html>
